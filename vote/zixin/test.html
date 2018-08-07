@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui">
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="./hostcss.js"></script> -->
+    <script src="./rem.js"></script>
+</head>
+<style>
+    html{
+        font-size: 100px;
+    }
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    button{
+        /* width: 0.5rem;
+        height: 0.2rem; */
+        /* position: absolute;
+        bottom: calc(50% - 0.1rem);
+        left: calc(50% - 0.25rem); */
+        margin: 0;
+        padding: 0;
+        /* font-size: 0.16rem; */
+
+    }
+    div.wrap{
+        position: relative;
+        /* height: 1rem;
+        width: 1rem; */
+        height: 100px;
+        width: 100px;
+        border: 1px solid red;
+    }
+    p,span{
+        font-size: 0.16rem;
+    }
+</style>
+<body>
+    <div class="wrap">
+        <!-- <p>button上面</p> -->
+        <div>
+                <button class="nihao" data-start="nihaobuhao" onclick="start()">开始</button>
+                <button>结束</button>
+        </div>
+    </div>
+</body>
+<script src="./jquery-3.2.1.js"></script>
+<script>
+    function start() {
+        console.log(this);
+        var nihao = document.querySelector('.nihao')
+        console.log(nihao.getAttribute('data-start'))
+        console.log($(nihao).attr('data-start'));
+    }
+</script>
+</html>

@@ -1,0 +1,309 @@
+/* 重置样式 */
+
+/*清除外边距*/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+figure,
+/*结构元素*/
+
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+/*列表元素*/
+
+fieldset,
+lengend,
+button,
+input,
+textarea,
+/*表单元素*/
+
+th,
+td,
+/*表格元素*/
+
+pre
+/*文本格式元素*/
+
+    {
+    margin: 0;
+}
+
+/*清除内边距*/
+
+ul,
+ol,
+menu {
+    padding: 0;
+}
+
+/*重置列表元素*/
+
+ul,
+ol {
+    list-style: none;
+}
+
+/*将字体扶正*/
+
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal;
+}
+
+/*清下划线*/
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/*鼠标略过a标签，显示下划线*/
+
+a:hover {
+    /*text-decoration: underline;*/
+}
+
+/*清浮动*/
+
+.clear:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* 页面样式 */
+
+.top,
+footer {
+    font-size: 0;
+}
+
+.top img {
+    width: 100%;
+}
+
+footer img {
+    width: 100%;
+}
+
+/* 列表页 */
+
+.allPerson {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.wrap {
+    background: #000000;
+    display: none;
+}
+
+/* search */
+
+.search {
+    position: relative;
+    height: 3rem;
+    line-height: 3rem;
+    /* height: 100%; */
+    /* text-align: center; */
+    margin: 0 2% 0 2%;
+    background: url('http://src.leju.com/imp/imp/deal/66/36/7/c5861297bc5def97ee67db68a7d_p24_mk24.png') no-repeat;
+    background-size: 100%;
+    /* background-size: cover; */
+    margin-bottom: 1rem;
+    font-size: 0;
+}
+
+.search_button {
+    display: inline-block;
+    width: 14%;
+    height: 2.3rem;
+    border: none;
+    outline: none;
+    vertical-align: top;
+    opacity: 0;
+}
+
+.search_input {
+    outline: none;
+    border: none;
+    width: 77%;
+    margin: 0 0 0 5%;
+    line-height: 2.5rem;
+    height: 2.5rem;
+    background: #604b24;
+    letter-spacing: 0.15rem;
+    padding-left: 3%;
+    background-color: rgba(255, 255, 255, 0);
+    color: #f7da8a;
+}
+
+.search_input::-webkit-input-placeholder {
+    color: #f7da8a;
+    text-align: center;
+    letter-spacing: 0.15rem;
+}
+
+.search_input::-moz-placeholder {
+    color: #f7da8a;
+    text-align: center;
+}
+.search_input::-moz-placeholder {
+    color: #f7da8a;
+    text-align: center;
+}
+.search_input::-ms-input-placeholder {
+    color: #f7da8a;
+    text-align: center;
+}
+
+/* 人物列表 */
+.person_list {
+    position: absolute;
+    left: 7.5%;
+    top: 3rem;
+    width: 78%;
+    font-size: 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    display: none;
+    /* opacity: 0.5;
+    filter:alpha(opacity=50); */
+}
+
+.person_list li {
+ 
+}
+.person_list li a{
+    display: block;    
+    height: 3.5rem;
+    line-height: 3.5rem;
+    width: 95%;
+    font-size: 1.5rem;    
+    /* height: 100%; */
+    padding: 0 0 0 1rem;    
+    /* background: red; */
+    color: #f7da8a;
+}
+
+/* 列表 */
+.person {
+    display: block;
+    /* background: red; */
+    width: 30.6%;
+    /* height: 18.1rem; */
+    margin-bottom: 0.7rem;
+    margin-right: 2%;
+    overflow: auto;
+}
+
+.person:nth-of-type(3n+1) {
+    /* background: blue; */
+    margin-left: 2%;
+}
+
+.person:nth-of-type(3n) {
+    /* background: orange; */
+    margin-right: 2%;
+}
+
+/* person列表里的数据 */
+
+.person_img img {
+    width: 100%;
+    display: block;
+}
+
+.person_list_img {
+    margin-top: 0.5rem;
+}
+
+.person_list_img img {
+    width: 100%;
+}
+
+.person_bottom {
+    overflow: auto;
+    background: url('http://src.leju.com/imp/imp/deal/9d/17/2/39d7d91a8310ef27b4d28ab96fd_p24_mk24.jpg');
+    background-size: cover;
+    height: 7.6rem;
+}
+
+.person_name {
+    font-size: 1.7rem;
+    text-align: center;
+    color: #371508;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.person_desc {
+    /* height: 2.1rem; */
+    /* line-height: 1.2rem; */
+    color: #ffffff;
+    /* font-size: 1rem; */
+    text-align: center;
+    margin-bottom: 0.6rem;
+    padding: 0 0.1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+/* 票数 */
+
+.person_piao {
+    color: #ffffff;
+    margin-bottom: 0.4rem;
+    font-size: 1.4rem;
+}
+
+.person_piao>span:nth-of-type(2) {
+    display: inline-block;
+    height: 1.1rem;
+    width: 0.9rem;
+    background: url('http://src.leju.com/imp/imp/deal/df/63/e/6f59c462da121d145db6e5a72d0_p24_mk24.png');
+    background-size: cover;
+    vertical-align: top;
+    margin-top: 0.2rem;
+}
+
+.person_piao>span:nth-of-type(1) {
+    display: inline-block;
+    /* margin: 0 2.5rem 0 0.7rem; */
+    margin: 0 5% 0 2%;
+    /* width: 4rem; */
+    width: 70%;
+}
+
+/* 投票button */
+.person_toupiao_button img {
+    width: 100%;
+}
+
+.person_toupiao_button {
+    font-size: 0px;
+}
+

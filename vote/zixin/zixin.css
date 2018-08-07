@@ -1,0 +1,159 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: Arial,"微软雅黑";
+  height: 100%;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+input {
+  border: none;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  display: block;
+}
+
+body {
+  background: url("http://src.leju.com/imp/imp/deal/fc/44/2/d8d5789d0b093e51637fdba387b_p24_mk24.png") repeat-y;
+  background-size: 100% 100%;
+}
+
+body header img {
+  width: 100%;
+}
+
+body .container {
+  height: 16.512rem;
+  background: url("http://src.leju.com/imp/imp/deal/29/f8/6/49f32064bb0228501c952e815da_p24_mk24.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+body .container .main {
+  width: 12.75733rem;
+  margin: 0 auto;
+  padding-top: 0.53333rem;
+}
+
+body .container .main h1 {
+  font-size: 0.768rem;
+  color: '#333';
+  font-weight: normal;
+  margin-bottom: 0.61867rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body .container .main h1 span {
+  width: 1.81333rem;
+  height: 1px;
+  background: #333;
+  display: block;
+  margin: 0 0.29867rem;
+}
+
+body .container .main .switchimg {
+  width: 100%;
+  position: relative;
+  background: #1a1a1f;
+  height: 2.47467rem;
+  border-radius: 0.21333rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body .container .main .switchimg span {
+  display: none;
+  font-size: 1.49333rem;
+}
+
+body .container .main .switchimg span i {
+  font-style: normal;
+  color: #fff;
+}
+
+body .container .main .switchimg span.cur {
+  display: block;
+}
+
+body .container .main .user_num p {
+  font-size: 0.64rem;
+  color: #1a1a1f;
+  text-align: center;
+  line-height: 1.55733rem;
+}
+
+body .container .main .user_num p span {
+  color: #c74658;
+}
+
+body .container .main .form div {
+  position: relative;
+  width: 12.672rem;
+  height: 1.74933rem;
+  border: 2px solid #a0a0a0;
+  border-radius: 0.21333rem;
+  background: #fff;
+  margin-bottom: 0.384rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+body .container .main .form div input {
+  width: 11.62667rem;
+  font-size: 0.64rem;
+  height: 1.74933rem;
+  padding: 0 0.512rem 0 0.512rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body .container .main .form div span {
+  color: #1a1a1f;
+  font-size: 0.768rem;
+  position: absolute;
+  right: 0.512rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+body .container .main .form .area {
+  margin: 0;
+}
+
+body .container .main .form .area input {
+  width: 10.45333rem;
+}
+
+body .container .main .form .submit_btn {
+  width: 100%;
+  height: 1.70667rem;
+  background: #ffa815;
+  color: #fff;
+  font-size: 0.64rem;
+  border-radius: 0.21333rem;
+  border: none;
+  margin-top: 0.68267rem;
+  -webkit-tap-highlight-color: transparent;
+}

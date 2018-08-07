@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+            (function (doc, win) {
+                var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if (clientWidth >= 640) {
+                            docEl.style.fontSize = '16px';
+                        } else {
+                            docEl.style.fontSize = 16 * (clientWidth / 640) + 'px';
+                        }
+                    };
+                if (!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                doc.addEventListener('DOMContentLoaded', recalc, false);
+            })(document, window);
+        </script>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        background: orange;
+    }
+    .search {
+        position: relative;
+        height: 3rem;
+        line-height: 3rem;
+        /* height: 100%; */
+        /* text-align: center; */
+        margin: 0 2% 0 2%;
+        background: url('http://src.leju.com/imp/imp/deal/66/36/7/c5861297bc5def97ee67db68a7d_p24_mk24.png') no-repeat;
+        background-size: 100%;
+        /* background-size: cover; */
+        margin-bottom: 1rem;
+        font-size: 0;
+    }
+
+    .search_button {
+        display: inline-block;
+        width: 14%;
+        height: 2.3rem;
+        border: none;
+        outline: none;
+        vertical-align: top;
+        opacity: 0;
+    }
+
+    .search_input {
+        outline: none;
+        border: none;
+        width: 77%;
+        margin: 0 0 0 5%;
+        /* line-height: 3rem; */
+        /* height: 3rem; */
+        background: #604b24;
+        letter-spacing: 0.15rem;
+        padding-left: 3%;
+        background-color: rgba(255, 255, 255, 0);
+        color: #f7da8a;
+    }
+
+    .search_input::-webkit-input-placeholder {
+        color: #f7da8a;
+        text-align: center;
+        letter-spacing: 0.15rem;
+    }
+
+    .search_input::-moz-placeholder {
+        color: #f7da8a;
+        text-align: center;
+    }
+    .search_input::-moz-placeholder {
+        color: #f7da8a;
+        text-align: center;
+    }
+    .search_input::-ms-input-placeholder {
+        color: #f7da8a;
+        text-align: center;
+    }
+</style>
+</style>
+
+<body>
+
+    <div class="search">
+        <input type="text" class="search_input" placeholder="请输入候选人姓名">
+        <button class="search_button">搜索</button>
+    </div>
+</body>
+
+</html>

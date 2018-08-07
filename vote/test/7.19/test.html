@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui">
+    <title>Array</title>
+    <!-- <title>hello</title> -->
+
+    <style>
+        /* .top {
+            position: relative;
+        }
+
+        .top img {
+            width: 100%;
+        } */
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            height: 200px;
+            width: 100%;
+        }
+
+        div:nth-of-type(1) {
+            /* border: 1px solid red; */
+        }
+
+        .div {
+            position: relative;
+            overflow: auto;
+            margin-top: 20px;
+            height: 200px;
+            background: gold;
+        }
+
+        .div:before {
+
+            content: "";
+            pointer-events: none;
+            /* 防止点击触发 */
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            left: 0;
+            top: 0;
+            border: 1px solid red;
+            -webkit-transform: scale(0.5);
+            -webkit-transform-origin: 0 0;
+            transform: scale(0.5);
+            transform-origin: 0 0;
+        }
+
+        p {
+            width: 100px;
+            border: 1px solid red;
+            /* white-space: pre-wrap; */
+            word-break: break-all;
+            text-align: center;
+        }
+
+        .test {
+            background: black;
+            opacity: 0.6;
+            filter: alpha(opacity=60);
+            font-size: 16px;
+            color: red;
+        }
+
+        .hello {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+
+        .myhello {
+            height: 100px;
+            width: 100px;
+        }
+
+        .myhello img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="myhello">
+        <p>nihao1</p>
+        <img src="" alt="">
+        <div class="nihaoa">
+            <h1>wobuhao</h1>
+        </div>
+        <h1>wohao1</h1>
+    </div>
+    <!-- <div class="hello">
+
+    </div>
+    <div class="test">
+        <p>fjadlfjadlfja;dsljfaldskjfs</p>
+    </div> -->
+    <!-- <div class="top">
+        <img src="http://src.leju.com/imp/imp/deal/de/66/e/64c93ff3994224169de50cd05f3_p24_mk24.jpg" alt="">
+        <div class="wt_many_topcity">北京</div>
+    </div> -->
+
+    <!-- <p>你好啊你好发生的发生的发放发生的发生的发发生地方发生的发生的发</p>
+    <div>
+
+    </div>
+
+    <div class="div">
+
+    </div> -->
+
+</body>
+<script src="../../jquery-3.2.1.js"></script>
+
+<script>
+    $.getJSON(("http://zx.jiaju.sina.com.cn/index.php?app=Api&mod=Survey&sur_id=2156&callback=?", function (data) {
+        this.option = data.data.question[0].option;
+        searchInput(option);
+        this.renderData();
+    }))
+
+</script>
+<!-- <script>
+    // // var a = {
+    // //     hello: 'world'
+    // // }
+    // // var ss = JSON.stringify(a)
+    // // var s = JSON.parse(ss)
+    // // console.log(s)
+
+
+    // localStorage.setItem('a', 'adsf');
+    // localStorage.setItem('a', 'hello')
+    console.log(localStorage.getItem('a'))
+    // var ab = 1
+    // var abs = ab.toString();
+    // console.log(ab)
+    // console.log(abs)
+
+    // var fasf = localStorage.getItem('addCount')
+    // var ints = parseInt(fasf)
+    // if(ints) {
+    //     console.log('ji')
+    // }else{
+    //     console.log('fsdf')
+    // }
+    // console.log(fasf)
+    // console.log(ints)
+    // console.log(localStorage)
+    // for(var item in localStorage) {
+    //     console.log(item)
+    //     // console.log(localStorage[])
+    // }
+    // var date = new Date();
+    // console.log(date)
+    // console.log(date.getTime())
+    // 1532052284625
+    // console.log()
+
+
+
+    // function formatSeconds(value) {
+    //     var secondTime = parseInt(value); // 秒
+    //     var minuteTime = 0; // 分
+    //     var hourTime = 0; // 小时
+    //     var dayTime = 0; // 天
+
+    //     if (secondTime > 60) { //如果秒数大于60，将秒数转换成整数
+    //         //获取分钟，除以60取整数，得到整数分钟
+    //         minuteTime = Math.floor(secondTime / 60);
+    //         //获取秒数，秒数取佘，得到整数秒数
+    //         secondTime = Math.floor(secondTime % 60);
+    //         //如果分钟大于60，将分钟转换成小时
+    //         if (minuteTime > 60) {
+    //             //获取小时，获取分钟除以60，得到整数小时
+    //             hourTime = Math.floor(minuteTime / 60);
+    //             //获取小时后取佘的分，获取分钟除以60取佘的分
+    //             minuteTime = Math.floor(minuteTime % 60);
+    //             if (hourTime >= 24) {
+    //                 dayTime = Math.floor(hourTime / 24);
+    //                 hourTime = hourTime - dayTime * 24;
+    //             }
+    //         }
+    //     }
+
+    //     var result = "" + secondTime + "秒";
+
+    //     if (minuteTime > 0) {
+    //         result = "" + minuteTime + "分" + result;
+    //     }
+    //     if (hourTime > 0) {
+    //         result = "" + hourTime + "小时" + result;
+    //     }
+    //     if (dayTime > 0) {
+    //         result = '' + dayTime + '天' + result;
+    //     }
+    //     if (secondTime == 60) {
+    //         result = '1分钟'
+    //     }
+    //     if (minuteTime == 60) {
+    //         result = "1小时"
+    //     }
+    //     if (hourTime == 24) {
+    //         result = '1天'
+    //     }
+    //     if (dayTime > 0 && hourTime == 0 && minuteTime == 0 && secondTime == 0) {
+    //         result = '1天'
+    //     }
+    //     return result;
+    // }
+
+    // console.log(formatSeconds(120))
+</script> -->
+<!-- 
+<script>
+    var arr = [];
+    var array = ['one', 'two', 'three', 'four']
+    for (var i = 0; i < array.length; i++) {
+        var x = {}
+        x.no = i;
+        x.text = array[i];
+        x.invoke = function () {
+            console.log(i)
+        }
+        arr.push(x)
+    }
+    arr[0].invoke()
+    arr[1].invoke()
+    arr[2].invoke()
+    arr[3].invoke()
+
+
+
+    // 如何实现js对象深度克隆
+    var a = {
+        name: '蒋泽',
+        age: 25
+    }
+
+    var arr1 = ['one', 'two', 'three', 'four'];
+    var arr1Str = JSON.stringify(arr1)
+    console.log(arr1Str)
+    var aStr = JSON.stringify(a);
+    var aObj = JSON.parse(aStr);
+    a.name = '蒋泽'
+    console.log(aObj);
+    console.log(a)
+
+
+
+
+    var arr2 = ['one', 'one', 'three', 'four'];
+    var arr3 = Array.from( new Set(arr2))
+    arr3.push('one')
+    console.log(arr3)
+    
+</script> -->
+
+<!-- <script>
+    // var time = 3500; 86400
+    // var newTime = time % 60;
+    // var zheng = time / 60;
+    // var zen = Math.floor(zheng)
+    // console.log(zen)
+    // console.log(newTime)
+
+    // var interval = 3700;
+    // var hours = Math.floor(interval / (60 * 60));
+    // console.log(hours)
+    // var ninutes = Math.floor(interval % (60 * 60));
+    // console.log(ninutes)
+    // var ss = 60 * 24 * 60;
+    // console.log(ss)
+    // var seconds = interval % (60 * 24 * 60);
+    // alert('请勿频繁投票，请' + hours + '小时' + ninutes + '分' + seconds + '秒' + '后再试');
+</script> -->
+
+<!-- 
+<script>
+    // js 数组，slice：重新创建一个数组,两个参数，start（Y），end（N）
+    var arr = ['one', 'two', 'three', 'four'];
+    // 
+    var arr1 = arr.slice(1, 3);
+    // arr1.push('one');
+    console.log(arr);
+    console.log(arr1);
+
+    // splice,操作原数组，三个参数，start（Y），deleteNum， addItem(可多个),有返回值，返回截下来的数组
+    // var arr2 = arr.splice(0, 0, 'five');
+    var arr2 = arr.splice(0);
+    console.log(arr2);
+    console.log(arr);
+
+    arr2.push({
+        name: 'jiangze'
+    }, 'five');
+    // join，把数组元素都以字符串形式连一起,如果数组元素中有对象的话，那么将以[object, object]代替那个元素
+    var arr3 = arr2.join(',');
+    console.log(arr3);
+
+    // pop 删除最后一个数组元素
+    arr2.pop();
+    arr2.pop();
+    console.log(arr2);
+
+    // shift 删除第一个数组元素
+    arr2.shift();
+    console.log(arr2);
+
+    // push和unshift都可以增加多个数组元素
+    arr2.unshift('one', 'one');
+    console.log(arr2);
+
+    arr2.shift();
+    console.log(arr2);
+
+    // concat,新建一个数组，将调用者，和参数放进一个数组内,参数形式很灵活，可以逗号，一个数组，或者多个数组
+    var arr3 = arr2.concat(['hello'], ['five', 'six', ['seven']])
+    console.log(arr2);
+    console.log(arr3);
+
+    fill:
+        // forEach 数组循环，不能打断,没有返回值
+        arr2.forEach(function (item, index, arr2) {
+            // console.log(this)
+            // console.log(item)
+            // console.log(index)
+            // console.log(Int16Array)
+            // console.log(index)
+            if (index == 1) {
+                return item;
+                // break fill;
+                // return
+            }
+        })
+    //map 具有返回值
+    var arr4 = arr2.map(function (item, index, arr2) {
+        if (index == 2) {
+            return item;
+            // break;
+            // continue;
+        }
+
+        // console.log(item)
+        // console.log(index)
+        // console.log(arr2)
+    })
+
+    console.log(arr4)
+
+    // filter 数组循环查找符合条件的元素，并新建一个数组，将它们放进去,不可打断
+    var arr5 = arr2.filter(function (item, index, arr2) {
+        if (item == 'one') {
+            return item;
+        }
+        console.log(index);
+    })
+    console.log(arr5)
+    console.log(arr2)
+
+
+    // sort 根据ASCII来进行排行
+    var arr = new Array(6)
+    arr[0] = "George"
+    arr[1] = "John"
+    arr[2] = "Thomas"
+    arr[3] = "James"
+    arr[4] = "Adrew"
+    arr[5] = "Martin"
+    console.log(arr.sort())
+
+
+    var arr5 = [100, 2, 4, 4.4, 14, 40, 36];
+    console.log(arr5.sort())
+    var arr6 = arr5.sort(function(item1, item2) {
+        //从小到大排序， 如果item1大于item2，返回一个正数， 如果item1等于item2，返回0；如果item1小宇item2，返回一个负数
+
+        // sort，返回一个负数时，两个数不换位置，返回正数时，两个数更换位置
+        // if(item1 > item2) {
+        //     return 1
+        // }else if(item1 == item2) {
+        //     return 0;
+        // }else {
+        //     return -1
+        // }
+        return item1 - item2;
+        // return item2 - item1;
+        // return -1;
+    })
+    console.log(arr6)
+
+</script> -->
+
+</html>

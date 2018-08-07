@@ -1,0 +1,269 @@
+/*清除外边距*/
+#form1{
+    display: none;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+figure,
+/*结构元素*/
+
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+/*列表元素*/
+
+fieldset,
+lengend,
+button,
+input,
+textarea,
+/*表单元素*/
+
+th,
+td,
+/*表格元素*/
+
+pre
+/*文本格式元素*/
+
+    {
+    margin: 0;
+}
+
+/*清除内边距*/
+
+ul,
+ol,
+menu {
+    padding: 0;
+}
+
+/*重置列表元素*/
+
+ul,
+ol {
+    list-style: none;
+}
+
+/*将字体扶正*/
+
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal;
+}
+
+/*清下划线*/
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/*鼠标略过a标签，显示下划线*/
+
+a:hover {
+    /*text-decoration: underline;*/
+}
+
+/*清浮动*/
+
+.clear:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* .top {
+    position: relative;
+    height: 18.9375rem;
+    width: 100%;
+    background: url(http://src.leju.com/imp/imp/deal/de/66/e/64c93ff3994224169de50cd05f3_p24_mk24.jpg) no-repeat;
+    background-size: 100% 100%;
+} */
+.wrap{
+    display: none;
+}
+.top{
+    position: relative;
+}
+.top img{
+    width: 100%;
+}
+
+.wt_many_topcity {
+    position: absolute;
+    top: 2.96875rem;
+    left: 16.75rem;
+    height: .71875rem;
+    padding: 0 .4375rem;
+    font-size: .4375rem;
+    line-height: .71875rem;
+    color: #f6d375;
+    border: 1px solid #c8a95e;
+    background: rgba(53, 34, 21, .8);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+body {
+    background: #2c1512;
+}
+
+.details {
+    position: relative;
+    width: 18.4375rem;
+    margin: .8125rem 0 0 .90625rem;
+    border: 1px solid #6b5031;
+    border-right: none;
+    height: 12.48rem;
+}
+
+footer img {
+    width: 100%;
+}
+
+.right {
+    position: relative;
+    color: #ebdebd;
+    display: inline-block;
+    width: 10.65625rem;
+    margin: 0 .625rem 0 0;
+    /* padding: 0 0 1.8125rem .28125rem; */
+    padding: 0 0 1.8125rem .6rem;
+}
+
+.left {
+    display: inline-block;
+    width: 6.6875rem;
+    margin: 1.03125rem 0 0 -.5rem;
+    vertical-align: top;
+    font-size: 0px;
+}
+
+.left img {
+    height: 100%;
+    width: 6.6875rem;
+}
+
+.right_name h2 {
+    font-size: .9375rem;
+    font-family: Microsoft YaHei;
+    line-height: 1.125rem;
+    color: #ceb17b;
+}
+
+.right_name {
+    margin: .84375rem 0 .75rem;
+}
+
+.right_name p {
+    font-size: .5rem;
+    font-family: Microsoft YaHei;
+    line-height: .6875rem;
+    color: #ceb17b;
+}
+
+.right_company,
+.right_details {
+    font-size: .5625rem;
+    font-family: Microsoft YaHei;
+    color: #ceb17b;
+    vertical-align: top;
+    display: block;
+    overflow: hidden;
+    line-height: .875rem;
+}
+
+.right_details {
+    margin-top: .4375rem;
+    font-size: .625rem;
+    font-family: Microsoft YaHei;
+    line-height: 1.0625rem;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+}
+
+.details_man {
+    position: absolute;
+    z-index: 1000;
+    opacity: 1;
+    top: -3rem;
+    right: -1rem;
+    display: inline-block;
+    width: 6.65625rem;
+    height: 5.78125rem;
+    background: url(http://src.leju.com/imp/imp/deal/de/ec/1/a0015e5bc0b4a6a4cbeb9c5d887_p24_mk24.png);
+    background-size: 20.25rem 10.25rem;
+    background-position: -8.15625rem -2.25rem;
+}
+
+.shelter {
+    position: absolute;
+    right: -1rem;
+    top: -.0625rem;
+    width: 7.96875rem;
+    border: 3px solid #2c1512
+}
+
+/* button */
+
+.click_button {
+    position: absolute;
+    top: 11.5rem;
+    right: 0;
+}
+
+.click_button div {
+    display: inline-block;
+    width: 7.6875rem;
+    height: 2rem;
+    margin-right: .8125rem;
+}
+
+.click_button a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.left_button {
+    background: url(http://src.leju.com/imp/imp/deal/de/ec/1/a0015e5bc0b4a6a4cbeb9c5d887_p24_mk24.png) no-repeat;
+    background-size: 20.25rem 10.25rem;
+    background-position: -7.625rem 0;
+}
+
+.right_button {
+    background: url(http://src.leju.com/imp/imp/deal/de/ec/1/a0015e5bc0b4a6a4cbeb9c5d887_p24_mk24.png) no-repeat;
+    background-size: 20.25rem 10.25rem;
+    background-position: -.0625rem -2.25rem;
+}
+
+footer {
+    margin-top: 3.375rem
+}
+
+.wt_huangk {
+    width: 5.46875rem;
+    height: .71875rem;
+    background: #6b5031;
+    margin-bottom: 1.875rem;
+    margin-left: 0.5rem;
+}
