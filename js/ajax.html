@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="http://cdn.leju.com/jQuery1.8.2.js"></script>
+</head>
+
+<body>
+
+    <script>
+
+        var myscript = document.createElement('script');
+        myscript.src = 'http://api.survey.leju.com/index.php?c=interface&a=get_survey&sur_id=2156&type=result&callback=hello';
+        var body = document.querySelector('body')
+        body.appendChild(myscript)
+
+        function hello(data) {
+            console.log(data)
+        }
+        // var xhr =  window.XMLHttpReques ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHttp');
+        // http://zx.jiaju.sina.com.cn/index.php?app=Api&mod=Survey&sur_id=2156
+
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', './ajax.json?name=jiangze&age=25', true);
+        xhr.setRequestHeader("MyHeader", "MyValue");
+        console.log(xhr.getAllResponseHeaders());
+        xhr.send(null);
+        xhr.onreadystatechange = function () {
+            if (xhr.status == 200 && xhr.readyState == 4) {
+                // console.log(xhr)
+                // console.log(xhr.response)
+                console.log(xhr.getAllResponseHeaders())
+                console.log(xhr.getResponseHeader('MyHeader'))
+                console.log(JSON.parse(xhr.response))
+                document.writeln(xhr.response)
+            }
+
+        }
+
+
+
+        // xhr.abort();
+
+
+
+        // $.ajax({
+        //     type: 'HEAD', // 获取头信息，type=HEAD即可
+        //     url: './ajax.json?name=jiangze&age=25',
+        //     // url: window.location.href,
+        //     //url:"http://device.qq.com/cgi-bin/device_cgi/remote_bind_get_Verify",
+        //     complete: function (xhr, data) {
+        //         // 获取相关Http Response header
+        //         var wpoInfo = {
+        //             // 服务器端时间
+        //             "date": xhr.getResponseHeader('Date'),
+        //             // 如果开启了gzip，会返回这个东西
+        //             "contentEncoding": xhr.getResponseHeader('Content-Encoding'),
+        //             // keep-alive ？ close？
+        //             "connection": xhr.getResponseHeader('Connection'),
+        //             // 响应长度
+        //             "contentLength": xhr.getResponseHeader('content-length'),
+        //             // 服务器类型，apache？lighttpd？
+        //             "server": xhr.getResponseHeader('Server'),
+        //             "vary": xhr.getResponseHeader('Vary'),
+        //             "transferEncoding": xhr.getResponseHeader('Transfer-Encoding'),
+        //             // text/html ? text/xml?
+        //             "contentType": xhr.getResponseHeader('Content-Type'),
+        //             "cacheControl": xhr.getResponseHeader('Cache-Control'),
+        //             // 生命周期？
+        //             "exprires": xhr.getResponseHeader('Exprires'),
+        //             "lastModified": xhr.getResponseHeader('Last-Modified')
+        //         };
+        //         // console.log(xhr.getAllResponseHeaders());
+        //         console.log(wpoInfo)
+        //         console.log(xhr)
+        //     }
+
+        // });
+        // 获取总数
+        // $.get('http://api.survey.leju.com/index.php?c=interface&a=get_survey&sur_id=2156&type=result&callback=?', function(data) {
+        //     console.log(data)
+        // }, 'jsonp');
+
+        // $.get('http://api.survey.leju.com/index.php?c=interface&a=get_survey&sur_id=2156&type=result', function(data, status, xhr) {
+        //     // console.log(status);
+        //     console.log(data);
+        //     // console.log(xhr);
+        // }, 'jsonp');
+
+        // $.getJSON('http://api.survey.leju.com/index.php?c=interface&a=get_survey&sur_id=2156&type=result&callback=?', function(data) {
+        //     console.log(data)
+        // })
+
+        // $.ajax({
+        //     type: 'GET',
+        //     url: 'http://api.survey.leju.com/index.php?c=interface&a=get_survey&sur_id=2156&type=result',
+        //     dataType: 'jsonp',
+        //     data: {},
+        //     success: function(data) {
+        //         console.log(data)
+        //     }
+        // })
+
+
+
+
+        // $.get('http://api.survey.leju.com/index.php?c=interface&a=get_survey&sur_id=2156&type=json&', function (data) {
+        //     console.log(data)
+        // }, 'jsonp')
+
+
+
+        // $.getJSON('http://api.survey.leju.com/index.php?c=interface&a=get_survey&sur_id=2156&type=json&callback=?', function (data) {
+        //     console.log(data);
+        // })
+
+        // $.ajax({
+        //     type: 'GET',
+        //     data: {},
+        //     url: 'http://api.survey.leju.com/index.php?c=interface&a=get_survey&sur_id=2156&type=json&callback=?',
+        //     dataType: 'jsonp',
+        //     success: function (data) {
+        //         console.log(data);
+        //     }
+        // })
+
+
+
+
+
+        // $.get('http://zx.jiaju.sina.com.cn/index.php?app=Api&mod=Survey&sur_id=2156', function(data) {
+        //     console.log(data)
+        // }, 'jsonp')
+
+        // $.get('http://api.survey.leju.com/index.php?c=interface&a=get_survey&sur_id=2156&type=result&callback=?', function(data) {
+        //     console.log('总数' + data)
+        // }, 'jsonp')
+
+        // $.getJSON('http://zx.jiaju.sina.com.cn/index.php?app=Api&mod=Survey&sur_id=2156&callback=?', function(data) {
+        //     console.log(data)
+        // })  
+
+
+        // $.ajax({
+        //     type: 'get',
+        //     // url: 'http://supports.jiaju.com/index.php?app=api&ctrl=mt&act=count_by_stamp&callback=json',
+        //     url: 'http://supports.jiaju.com/index.php?app=api&ctrl=mt&act=count_by_stamp',
+
+        //     data: { stamp: 1523526786 },
+        //     dataType: 'jsonp',
+        //     success: function (data) {
+        //         console.log(data)
+        //         if (data.status == 1) {
+        //             // $userNum.html(data.data.total)
+        //         }
+        //     }
+        // })
+
+
+        // $.ajax({
+        //     type: 'get',
+        //     url: 'http://zx.jiaju.sina.com.cn/index.php?app=Api&mod=Survey&sur_id=2156',
+        //     dataType: 'jsonp',
+        //     success: function(data, status, xhr) {
+        //         console.log(data)
+        //         console.log(status)
+        //         console.log(xhr)
+        //     }
+        // })
+    </script>
+</body>
+
+</html>

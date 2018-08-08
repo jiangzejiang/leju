@@ -92,7 +92,7 @@ $(function () {
 
         console.log(option)
         var notName = [];
-        var countSort = false;
+        var countSort = true;
         var report_list = option.filter(function (item) {
             var attrinfo =  item.attrinfo;
             if (attrinfo != undefined && attrinfo.name_py) {
