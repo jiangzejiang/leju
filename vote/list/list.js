@@ -1,3 +1,4 @@
+// rem
 (function (doc, win) {
     var docEl = doc.documentElement,
         resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
@@ -21,22 +22,19 @@ $(function () {
         localStorage.setItem('countJson', '0');
     }
     // 获取人物所有数据
-    // $.getJSON("http://zx.jiaju.sina.com.cn/index.php?app=Api&mod=Survey&sur_id=2156&callback=?", function (data) {
     $.getJSON(allPersonPort, function (data) {
-        console.log(data);
         var option = data.data.question[0].option;
         renderData(option);
         searchInput(option)
     });
 
     var myOption;
-
+    // 人物查找输入
     function searchInput(option) {
-        console.log(option);
         myOption = option;
         $('.search_input').on('input propertychange', search);
     }
-    // 查找、拼接找到的候选人
+    // 将找到的候选人拼接进文档并显示出来
     function search() {
         var value = $('.search_input').val();
         var ul = $('.person_list ul');
@@ -48,7 +46,6 @@ $(function () {
                 $('.person_list').css({
                     display: 'block'
                 });
-                console.log(item);
                 var a = $('<a></a>').attr({
                     href: xiangqingUrl + "?" + item.oid
                 })
@@ -73,41 +70,103 @@ $(function () {
             search();
         }
     })
-
+    // 拼接DOM文档
     function doFunction(option) {
-        var myOption = option.filter(function (item) {
-            if (item.attrinfo != undefined && item.attrinfo.name_py) {
+        var a = 'bbuyuycccc';
+        var b = 'bcc';
+        console.log(a[0]);
+        console.log(b[0])
+        if(a > b) {
+            console.log('这是a>b')
+        }else {
+            console.log('这是a<b')
+        }
+        if(a[0] > b[0]) {
+            console.log('a > b')
+        }else if(a[0] == b[0]) {
+            console.log('a = b')
+        }
+        else {
+            console.log('a < b')
+        }
+
+        console.log(option)
+        var notName = [];
+        var countSort = false;
+        var report_list = option.filter(function (item) {
+            var attrinfo =  item.attrinfo;
+            if (attrinfo != undefined && attrinfo.name_py) {
                 return item;
+            }else{
+                notName.push(item);
+                // var name_py = attrinfo.name_py;
+                // var name = attrinfo.name;
+                // var personal_desc = attrinfo.personal_desc;
+                // var personal_photo = attrinfo.personal_photo;
+                // var postion = attrinfo.postion;
+                // var sub_company = attrinfo.sub_company;
             }
-        })
-        var report_list = myOption.sort(function (item1, item2) {
-            if (item1.attrinfo.name_py > item2.attrinfo.name_py) {
-                return 1;
-            } else {
-                return -1;
+        }).sort(function (item1, item2) {
+            var item1Count = parseInt(item1.count.count) + parseInt(item1.count.base);
+            var item2Count = parseInt(item2.count.count) + parseInt(item2.count.base);
+            //以票数多少排序，如果票数相同就以拼音排序
+            if(countSort) {
+                if (item1Count < item2Count) {
+                    return 1;
+                } 
+                else if(item1Count == item2Count && item1.attrinfo.name_py[0] > item2.attrinfo.name_py[0]) {
+                    return 1;
+                } 
+                else {
+                    return -1;
+                }
             }
+            // 以名字首字母排序，如果首字母相同就以票数多少排序
+            else{
+                if (item1.attrinfo.name_py[0] > item2.attrinfo.name_py[0]) {
+                    return 1;
+                } 
+                else if(item1Count < item2Count && item1.attrinfo.name_py[0] == item2.attrinfo.name_py[0]) {
+                    console.log(item1.attrinfo.name_py[0]);
+                    console.log(item2.attrinfo.name_py[0])
+                    return 1;
+                } 
+                else {
+                    return -1;
+                }
+            }
+           
         })
-        console.log('这是')
+        console.log(notName);
         console.log(report_list)
-        report_list.map(function (item) {
-            // person_img
-            var img = $('<img />').attr({
-                src: item.attrinfo.personal_photo
-            });
-            var person_img = $('<div class="person_img"></div>').css({
-                'background': 'url('+item.attrinfo.personal_photo+')',
-                'background-size': 'contain'
-            });
+        report_list.forEach(function (item, index) {
+            // person_img,人物图片
+            var person_img = $('<div class="person_img"></div>')
+                .attr({ "data-url": item.attrinfo.personal_photo });
+            if (index < 21) {
+                person_img.css({
+                    'background': 'url(' + item.attrinfo.personal_photo + ')',
+                    'background-size': 'contain'
+                })
+            } else {
+                person_img.css({
+                    'background': 'url(' + report_list[0].attrinfo.personal_photo + ')',
+                    'background-size': 'contain'
+                })
+            }
 
-            // person_piao
-            var zhichicount = $('<span></span>').html(item['count']['count'] + '票');
+            // person_piao，人物票数
+            var allCount = parseInt(item['count']['count']) + parseInt(item['count']['base']);
+
+            var zhichicount = $('<span></span>').html(allCount + '票');
             var person_piao = $('<div class="person_piao"></div>').append(zhichicount, '<span><span>');
-
+            // person_name，人物名字
             var person_name = $('<p class="person_name"></p>').html(item.attrinfo.name);
+            // person_desc，人物描述
             var person_desc = $('<p class="person_desc"></p>').html(item.attrinfo.sub_company + item.attrinfo.postion);
-            // person_bottom
+            // person_bottom，下部
             var person_bottom = $('<div class="person_bottom"></div>').append(person_piao, person_name, person_desc);
-            // person_toupiao_button
+            // person_toupiao_button，点击投票按钮
             var button_img = $('<img />').attr({
                 src: 'http://src.leju.com/imp/imp/deal/95/f3/b/89aafad11ce6eda7c07c9e05668_p24_mk24.png'
             })
@@ -117,21 +176,31 @@ $(function () {
                 href: xiangqingUrl + "?" + item.oid
             }).append(person_img, person_bottom, person_toupiao_button);
             $('.allPerson').append(person);
-            console.log('宽度' + img.width())
-            console.log('高度' + img.height())
-
-            $('.wrap').css({
-                display: 'block'
-            });
         })
+        $('.wrap').css({
+            display: 'block'
+        });
+        var person_img = $('.person_img');
+        for(var i = 21; i < person_img.length; i++) {
+            $(person_img[i]).css({
+                'background': 'url(' + $(person_img[i]).attr('data-url') + ')',
+                'background-size': 'contain'
+            })
+        }
     }
 
-    function renderData(report_list) {
-        // $.getJSON("http://api.survey.leju.com/index.php?c=interface&a=get_survey&sur_id=2156&type=result&callback=?", function (myCount) {
-        $.getJSON(allCountPort, function (myCount) {
 
-            console.log('获取总数')
-            console.log(myCount);
+
+    // 鼠标滚动
+    // function scroll() {
+    //     console.log('滚动')
+    // }
+    // $('document').on('scroll', scroll)
+
+    // 获取到所有人物数据，处理数据
+    function renderData(report_list) {
+        // 获取总票数
+        $.getJSON(allCountPort, function (myCount) {
             var newCountJosn = JSON.stringify(myCount);
             var countJson = localStorage.getItem('countJson');
             // 如果数据没有刷新过来
@@ -139,7 +208,6 @@ $(function () {
                 var arr = [];
                 // 把所有localStorage中的数据放在一个数组里
                 for (var localStorageItem in localStorage) {
-                    console.log(localStorageItem.substring(0, 7));
                     if (localStorageItem.substring(0, 7) == 'toupiao') {
                         var obj = {
                             oid: localStorageItem.substring(7),
@@ -150,10 +218,8 @@ $(function () {
                 }
                 // 循环localStorage里面自己加的次数
                 var myCountData = myCount.data;
-                arr.map(function (arrItem) {
-                    // var index = 0;
+                arr.forEach(function (arrItem) {
                     for (var item in myCountData) {
-                        // myCountData.map(function (item) {
                         if (arrItem.oid == item.toString()) {
                             var addCount = parseInt(arrItem.value);
                             var newMyCount = parseInt(myCountData[arrItem.oid].count) + addCount;
@@ -163,7 +229,7 @@ $(function () {
                 })
 
                 var index = 0;
-                report_list.map(function (item) {
+                report_list.forEach(function (item) {
                     index++;
                     for (var countItem in myCount.data) {
                         if (countItem.toString() === item.oid.toString()) {
@@ -171,25 +237,21 @@ $(function () {
                         }
                     }
                     if (index == report_list.length) {
-                        console.log(report_list)
                         doFunction(report_list);
                     }
                 })
 
             } else {
-                //当发现获得了新的数据的时候，按正常显示
-                // localStorage.clear();
-                // 清除需要加上的次数
+                //当发现获得了新的数据的时候，按正常显示，清除需要加上的次数
                 for (var localStorageItem in localStorage) {
-                    console.log(localStorageItem.substring(0, 7));
                     if (localStorageItem.substring(0, 7) == 'toupiao') {
                         localStorage.removeItem(localStorageItem);
                     }
                 }
-
                 localStorage.setItem('countJson', newCountJosn);
                 var index = 0;
-                report_list.map(function (item) {
+                // 将总票数拼接进人物数据中
+                report_list.forEach(function (item) {
                     index++;
                     for (var countItem in myCount.data) {
                         if (countItem.toString() === item.oid.toString()) {
@@ -197,7 +259,6 @@ $(function () {
                         }
                     }
                     if (index == report_list.length) {
-                        console.log(report_list)
                         doFunction(report_list);
                     }
                 })
