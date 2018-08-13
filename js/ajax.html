@@ -13,34 +13,48 @@
 
     <script>
 
-        var myscript = document.createElement('script');
-        myscript.src = 'http://api.survey.leju.com/index.php?c=interface&a=get_survey&sur_id=2156&type=result&callback=hello';
-        var body = document.querySelector('body')
-        body.appendChild(myscript)
+        // var myscript = document.createElement('script');
+        // myscript.src = 'http://api.survey.leju.com/index.php?c=interface&a=get_survey&sur_id=2156&type=result&callback=hello';
+        // var body = document.querySelector('body')
+        // body.appendChild(myscript)
 
-        function hello(data) {
-            console.log(data)
-        }
+        // function hello(data) {
+        //     console.log(data)
+        // }
         // var xhr =  window.XMLHttpReques ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHttp');
         // http://zx.jiaju.sina.com.cn/index.php?app=Api&mod=Survey&sur_id=2156
 
+        // var img = new Image();
+        // img.onload = img.onerror = function(data) {
+        //     console.log(data)
+        //     console.log('Done!');
+        // }
+        // img.src = './ajax.json'
 
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', './ajax.json?name=jiangze&age=25', true);
-        xhr.setRequestHeader("MyHeader", "MyValue");
-        console.log(xhr.getAllResponseHeaders());
-        xhr.send(null);
-        xhr.onreadystatechange = function () {
-            if (xhr.status == 200 && xhr.readyState == 4) {
-                // console.log(xhr)
-                // console.log(xhr.response)
-                console.log(xhr.getAllResponseHeaders())
-                console.log(xhr.getResponseHeader('MyHeader'))
-                console.log(JSON.parse(xhr.response))
-                document.writeln(xhr.response)
-            }
 
+        // var xhr = new XMLHttpRequest();
+        // xhr.open('GET', './ajax.json?name=jiangze&age=25', true);
+        // xhr.setRequestHeader("MyHeader", "MyValue");
+        // console.log(xhr.getAllResponseHeaders());
+        // xhr.send(null);
+        // xhr.onload = function () {
+        //     if (xhr.status == 200 && xhr.readyState == 4) {
+        //         // console.log(xhr)
+        //         // console.log(xhr.response)
+        //         console.log(xhr.getAllResponseHeaders())
+        //         console.log(xhr.getResponseHeader('MyHeader'))
+        //         console.log(JSON.parse(xhr.response))
+        //         document.writeln(xhr.response)
+        //     }
+
+        // }
+        function handleResponse(response) {
+            alert("You’re at IP address " + response.ip + ", which is in " +
+                response.city + ", " + response.region_name);
         }
+        var script = document.createElement("script");
+        script.src = "http://freegeoip.net/json/?callback=handleResponse";
+        document.body.insertBefore(script, document.body.firstChild);
 
 
 

@@ -1,0 +1,41 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.navbar-inverse{
+  background: orange;
+  border: none;
+
+}
+.navbar-inverse a{
+  color: white !important;
+}
+.navbar-inverse .dropdown {
+  background: orange !important;
+}
+.dropdown ul{
+  background: orange;
+  width: 150px !important;
+  
+}
+.dropdown-toggle{
+  background: orange !important;
+} 
+.dropdown li a:hover{
+  background: green !important;
+  
+}
+.dropdown-menu>li>a{
+  height: 100%;
+  line-height: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.dropdown-menu{
+  left: 0px !important;
+}
+body{
+  background: gray;
+}

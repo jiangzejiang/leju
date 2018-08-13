@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.box{
+			width: 400px;
+			height:400px;
+			border: 2px solid red;
+		}
+		img{
+			width: 100px;
+			height: 100px;
+		}
+		.target{
+			width: 400px;
+			height:400px;
+			border: 2px solid red;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img id="lantian" src="C:\Users\qianfeng\Desktop\lantian.jpg">
+		<img id="long" src="C:\Users\qianfeng\Desktop\long.jpg">
+	</div>
+	<div class="target"></div>
+	<script type="text/javascript">
+		// 浏览器文件拖入事件
+		ondragover = function(e){
+			e.preventDefault();
+		}
+		ondrop = function(e){
+			e.preventDefault();
+			let file = e.dataTransfer.files[0];
+			let fr = new FileReader();
+			fr.readAsDataURL(file);
+			fr.onload = function(e){
+				let img = new Image();
+				img.src = this.result;
+				document.body.appendChild(img)//将图片拖到body内
+			}
+		}
+ 
+		// 页面内拖动文件
+		let target = document.getElementsByClassName("target")[0];
+		let box = document.getElementsByClassName("box")[0];
+		box.ondragstart = (e)=>{
+			let imgId = e.target.id;
+			e.dataTransfer.setData("id", imgId);
+			console.log(imgId)
+		}
+		target.ondragover = (e)=>{
+			e.preventDefault();
+		}
+		target.ondrop = (e)=>{
+			e.preventDefault();
+			let imgId = e.dataTransfer.getData("id");
+			let clone = document.getElementById(imgId).cloneNode(true);
+			target.appendChild(clone);
+		}
+	</script>
+</body>
+</html>

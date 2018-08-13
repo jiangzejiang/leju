@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .myWrap {
+        width: 900;
+        border: 1px solid red;
+        height: 1000px;
+        position: relative;
+    }
+
+    .wrap {
+        height: 100px;
+        width: 100px;
+        background: orange;
+        position: absolute;
+        left: 100px;
+        top: 100px;
+    }
+    #file{
+        height: 30px;
+        width: 200px;
+    }
+</style>
+
+<body>
+    <div class="myWrap">
+        <div class="wrap">
+
+        </div>
+        <input type="file" name="" id="file">
+    
+    </div>
+</body>
+<script>
+    var wrap = document.querySelector('.wrap');
+
+    wrap.addEventListener('mousedown', function (event) {
+        document.addEventListener('mousemove', move);
+        function move(moveevent) {
+            wrap.style.left = moveevent.pageX - event.offsetX + 'px';
+            wrap.style.top = moveevent.pageY - event.offsetY + 'px';
+        }
+        document.addEventListener('mouseup', function (event) {
+            document.removeEventListener('mousemove', move);
+        })
+    });
+
+
+
+
+
+</script>
+
+</html>
