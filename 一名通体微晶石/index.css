@@ -1,0 +1,694 @@
+/*清除外边距*/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+figure,
+/*结构元素*/
+
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+/*列表元素*/
+
+fieldset,
+lengend,
+button,
+input,
+textarea,
+/*表单元素*/
+
+th,
+td,
+/*表格元素*/
+
+pre
+/*文本格式元素*/
+
+    {
+    margin: 0;
+}
+
+/*清除内边距*/
+
+ul,
+ol,
+menu {
+    padding: 0;
+}
+
+/*重置列表元素*/
+
+ul,
+ol {
+    list-style: none;
+}
+
+/*将字体扶正*/
+
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal;
+}
+
+/*清下划线*/
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/*鼠标略过a标签，显示下划线*/
+
+a:hover {
+    /* text-decoration: underline; */
+}
+
+/*清浮动*/
+
+.clear:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* wrap */
+.wrap {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.wrap nav {
+    max-width: 1920px;
+    min-width: 1200px;
+    margin: 0 auto;
+    background: #333333;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.wrap nav a {
+    /* display: inline-block; */
+    display: block;
+    color: #f5f5f5;
+    width: 240px;
+    text-align: center;
+}
+.wrap nav div{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.wrap nav a:hover {
+    color: #c7c7c7;
+}
+
+body {
+    width: 100%;
+}
+
+/* banner */
+
+.banner .swiper-container {
+    max-width: 1920px;
+    min-width: 1200px;
+    max-height: 686px;
+}
+
+.banner {
+    position: relative;
+}
+
+.banner .textDiv {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    height: 168px;
+    background: -webkit-linear-gradient(#fbfbfb, rgb(48, 47, 47));
+    opacity: 0.5;
+}
+
+/* 左右 */
+
+.banner .color {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: 45%;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 45px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.banner .color:hover {
+    cursor: pointer;
+}
+
+.banner .color-left {
+    left: 360px !important;
+}
+
+.banner .color-right {
+    right: 360px !important;
+}
+
+/* 分页器 */
+
+.banner .swiper-pagination {
+    z-index: 1000 !important;
+    bottom: 30px !important;
+}
+
+.banner .color.swiper-button-disabled {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.banner .swiper-pagination-bullet-active {
+    background: gray;
+    vertical-align: top;
+    margin-top: 7px !important;
+    border: 2px solid white;
+}
+
+/* 文字 */
+
+.banner p {
+    position: absolute;
+    z-index: 10;
+    color: white;
+    bottom: 65px;
+    font-size: 36px;
+    text-align: center;
+    width: 100%;
+}
+.banner p a{
+    color: white;
+}
+
+.banner .swiper-slide {
+    position: relative;
+}
+
+/* 微晶大家说 */
+
+.famous_person {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.famous_person_banner a {
+    display: inline-block;
+}
+
+/* left, right */
+
+.color-left-famous,
+.color-right-famous {
+    position: absolute;
+    bottom: 0;
+    background: #3e3e3e;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+    margin-top: -70px !important;
+    z-index: 1000;
+}
+
+.color-left-famous {
+    margin: 5px 10px 0 130px;
+}
+
+.color-right-famous {
+    left: 188px;
+}
+
+.famous_person_banner_left img {
+    display: block;
+}
+
+.color-right-famous {
+    right: 20px;
+}
+
+.color-left-famous:hover,
+.color-right-famous:hover {
+    cursor: pointer;
+}
+
+/* perspn_desc */
+
+.person_desc {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 356px;
+    height: 75px;
+    color: white;
+    bottom: 47px;
+}
+
+.person_desc p:nth-of-type(1) {
+    font-size: 24px;
+    margin: 5px 0 5px 0;
+}
+
+.person_desc p {
+    padding: 0 0 0 24px;
+}
+
+.famous_person_bottom {
+    height: 540px;
+}
+
+.famous_person_banner_left {
+    display: inline-block;
+    margin-right: 26px;
+}
+
+#famous_person_banner .swiper-button-disabled {
+    background: #8e8e8e;
+}
+
+/* 微晶右侧*/
+
+.famous_person_banner_right {
+    display: inline-block;
+    vertical-align: top;
+    height: 540px;
+    width: 813px;
+}
+
+.famous_person_banner_right .licheng a {
+    display: inline-block;
+    padding-right: 15px;
+    padding-left: 3px;
+    color: #626262;
+}
+
+.licheng a:hover {
+    color: #333;
+}
+
+.famous_person_banner_right .licheng {
+    height: 55px;
+}
+
+.famous_person_banner_right .licheng a:nth-of-type(1) {
+    border-right: 2px solid black;
+    line-height: 16px;
+}
+
+.famous_person_banner_right .licheng a:nth-of-type(2) {
+    padding-left: 15px;
+}
+
+/* 微晶进化论 */
+
+.evolution_bg {
+    background: #f7f7f7;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding-bottom: 40px
+}
+
+#evolution {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#evolution>div {
+    font-size: 0;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* 微晶进化论图文 */
+
+.evolution_img_text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.evolution_img_text>div {
+    position: relative;
+    margin-bottom: 10px;
+    width: 594px;
+    height: 381px;
+    /* background: orange; */
+}
+
+.evolution_img_text>div img {
+    width: 100%;
+    height: 100%;
+}
+
+.evolution_text {
+    position: absolute;
+    top: 40px;
+    text-align: center;
+    width: 100%;
+    height: 200px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.evolution_text p:nth-of-type(1) {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.evolution_img_text a {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.zhezhao {
+    background: black;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+/* 微晶先生活*/
+
+.microlite_live>div {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.microlite_live {
+    position: relative;
+}
+
+#swiper_microlite_live {
+    display: inline-block;
+    width: 945px;
+    height: 495px;
+}
+
+#swiper_microlite_live .textDiv {
+    height: 60px;
+    width: 945px;
+    /* width: 100%; */
+    background: black;
+    opacity: 0.3;
+    position: absolute;
+    bottom: 0;
+}
+
+#swiper_microlite_live .swiper-slide {
+    position: relative;
+}
+
+/*分页器  */
+
+#swiper_microlite_live .swiper-pagination-bullet {
+    /* background: #f7f7f7; */
+    background: white;
+    opacity: 0.8;
+}
+
+#swiper_microlite_live .swiper-pagination-bullet-active {
+    background: #80c53f;
+}
+
+.microlite_live_banner {
+    width: 200px !important;
+    margin-left: 770px;
+    bottom: 20px !important;
+}
+
+.live-button {
+    height: 35px;
+    width: 35px;
+    background: black;
+    position: absolute;
+    top: 251px;
+    z-index: 10;
+    text-align: center;
+    line-height: 35px;
+    font-size: 24px;
+    color: white;
+    opacity: 0.5
+}
+
+.live-button:hover {
+    cursor: pointer;
+}
+
+.live-right-color {
+    right: 0;
+}
+
+.live-button.swiper-button-disabled {
+    opacity: 0.3;
+}
+
+/* 文字 */
+
+.live-ziti {
+    bottom: 16px;
+    font-size: 22px;
+    width: 800px;
+    position: absolute;
+    z-index: 10;
+    /* background: red; */
+    color: white;
+    padding-left: 20px;
+}
+
+.live-ziti p span:nth-of-type(1) {
+    display: inline-block;
+    padding-right: 15px;
+    border-right: 2px solid white;
+    line-height: 23px;
+}
+
+.live-ziti p span:nth-of-type(2) {
+    padding-left: 10px;
+    /* border-right: 1px solid red; */
+}
+
+/* 微晶先生活 右侧缩略图*/
+
+.live_thumbnail {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 245px !important;
+    display: inline-block;
+    height: 495px;
+    overflow: hidden;
+}
+
+.microlite_live>div:nth-of-type(2) {
+    position: relative;
+}
+
+.live_thumbnail img {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.live_thumbnail li {
+    /* display: block; */
+    margin-bottom: 6px;
+    text-align: center;
+    position: relative;
+}
+
+.live_thumbnail>ul {
+    position: absolute;
+    /* top: -400px; */
+}
+
+.active_li p {
+    background: #80c53f;
+}
+
+.active_li .sanjiao {
+    position: absolute;
+    height: 0;
+    width: 0;
+    border: 15px solid transparent;
+    border-left: 15px solid #80c53f;
+    top: 65px;
+}
+
+/* 微晶浪潮 */
+
+.microlite_wave {
+    width: 1200px;
+    margin: 0 auto 43px;
+    /* margin-bottom:  */
+}
+
+.wave_img {
+    font-size: 0;
+}
+
+.wave_body>div {
+    display: inline-block;
+    /* background: orange; */
+    height: 340px;
+}
+
+.wave_body_left {
+    width: 620px;
+    vertical-align: top;
+    background: black;
+}
+
+.wave_body_right {
+    width: 570px;
+}
+
+.wave_right_title {
+    font-size: 30px;
+    color: #80c53f;
+    text-align: center;
+    margin-top: 30px;
+}
+.wave_desc{
+    padding: 0 15px;
+    margin-top: 30px;
+    color: #8f8f8f;
+}
+
+.wave_body_left video{
+    margin: 5px 0 0 0;
+}
+/* 关注一名微晶 */
+#microlite_attention{
+    /* width: 100%; */
+    background: #f3f3f3;
+    margin: 0 auto;
+    padding-bottom: 110px;
+}
+.attention_img{
+    width: 1200px;
+    height: 165px;
+    font-size: 0;
+    margin: 0 auto;
+}
+.attention_img>img{
+    width: 100%;
+    height: 100%;
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+
+.attention_desc li {
+    float: left;
+    
+}
+.attention_desc ul{
+    overflow: auto;
+    width: 1200px;
+    margin: 0 auto;
+}
+.attention_desc{
+    margin: 25px 0 0 0;
+    text-align: center;
+    background: #f3f3f3;
+   
+}
+/* 客服 */
+.attention_kefu{
+    height: 110px;
+    width: 255px;
+    background: #3e3e3e;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin: 0 53px 0 55px;
+}
+.attention_kefu p:nth-of-type(1) {
+    margin-top: 25px;
+}
+
+.attention_lianjie{
+    /* width: 216px; */
+    height: 118px;
+    font-size: 0;
+}
+/* 链接 */
+.attention_lianjie a{
+    display: inline-block;
+    font-size: 0;
+    background: #f3f3f3;
+}
+.attention_lianjie>a{
+    height: 118px;
+    width: 110px;
+}
+
+/* 微信 */
+.attention_wechat>div{
+    display: inline-block;
+   
+}
+.attention_wechat{
+    margin:  0 50px;
+}
+
+/* 新浪 */
+.attention_sina>div{
+    display: inline-block;
+}
+.attention_sina, .attention_wechat{
+    border: 1px solid #bfbfbf;
+    border-radius: 10px;
+    width: 182px;
+    height: 97px;
+    padding: 10px 30px 10px 20px;    
+}
+.logos img{
+    height: 65px;
+    width: 65px;
+}
+.rq_code img{
+    height: 85px;
+    width: 85px;
+}
+.logos{
+    margin-right: 20px;
+}
+.logos p {
+    color: #333333;
+    font-size: 15px;
+    margin-top: 3px;
+    text-align: center;
+}

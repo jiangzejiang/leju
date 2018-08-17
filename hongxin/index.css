@@ -13,15 +13,6 @@
 }
 
 /* 报名 */
-
-.signName {
-    /* display: block; */
-}
-
-.signPhone {
-    /* display: block; */
-}
-
 .signName,
 .signPhone {
     display: block;
@@ -34,6 +25,14 @@
     font-size: 60px;
     padding: 0 0 0 30px;
     border: none;
+    letter-spacing: 10px;
+}
+.signName {
+    margin-bottom: 60px;
+}
+
+.signPhone {
+    margin-bottom: 55px;    
 }
 
 .sign {
@@ -45,7 +44,9 @@
     border: none;
     background: #2961ac;
     color: #fdfeff;
-    font-size: 60px;
+    font-size: 80px;
+    margin-bottom: 60px;
+    letter-spacing: 15px;
 }
 
 .myForm input::-webkit-input-placeholder {

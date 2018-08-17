@@ -12,159 +12,86 @@
             margin: 0;
         }
 
-        ul,
-        li {
-            list-style: none
+        .Jwrap {
+            height: 500px;
+            width: 400px;
+            background: orange;
+            margin: 200px 0 0 200px;
         }
-
-        /* 顶部 */
-
-        .Jwrap nav {
-            background: #eaecf2;
-            height: 50px;
-            line-height: 50px;
-            padding: 0 0 0 40px;
+        .tianchong{
+            height: 1000px;
         }
-
-        /* 每个li */
-
-        .Jcontain li {
-            /* height: 200px; */
+        ul{
+            list-style: none;
         }
-
-        .Jcontain li h4 {
-            height: 60px;
-            line-height: 60px;
-
-        }
-
-        .Jcontain li>div {
-            height: 60px;
-            line-height: 60px;
-        }
-
-        .Jcontain li>div>span {
-            display: inline-block;
-            width: 90px;
-            height: 60px;
-            line-height: 60px;
-        }
-
-        /* 输入框 */
-
-        .Jcontain li>div>input {
-            display: inline-block;
-            width: 280px;
+        li{
             height: 30px;
-            line-height: 60px;
-            padding: 0 0 0 20px;
-            /* 去除输入框默认点击时蓝色边框 */
-            outline: none;
-        }
-
-        .Jcontain li>div>input:focus {
-            /* border: none; */
-        }
-
-        /* 发布按钮 */
-
-        .Jfooter {
-            margin: 50px 0 0 0;
-            width: 500px;
-            height: 50px;
-            text-align: center;
-        }
-
-        .Jfooter_fabu {
-            height: 50px;
-            width: 120px;
-            border: none;
-            background: #3187c2;
-            color: white;
-            /* 去除输入框默认点击时蓝色边框 */
-            outline: none;
-        }
-
-        .Jfooter_fabu:focus {
-            /* border: none; */
+            width: 30px;
+            background: red;
+            float: left;
+            margin-right: 30px;
         }
     </style>
 </head>
 
 <body>
+    <!-- <div class="tianchong"></div> -->
+    <div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
     <div class="Jwrap">
-        <nav>
-            <span>模块管理</span>
-            <span>></span>
-            <span>活动咨询修改</span>
-        </nav>
-        <div class="Jcontain">
-            <ul>
-                <li>
-                    <h4>位置一：</h4>
-                    <div>
-                        <span>标题：</span>
-                        <input maxlength="10" type="text">
-                    </div>
-                    <div>
-                        <span>链接地址：</span>
-                        <input type="text">
-                    </div>
-                </li>
-                <li>
-                    <h4>位置一：</h4>
-                    <div>
-                        <span>标题：</span>
-                        <input type="text">
-                    </div>
-                    <div>
-                        <span>链接地址：</span>
-                        <input type="text">
-                    </div>
-                </li>
-                <li>
-                    <h4>位置一：</h4>
-                    <div>
-                        <span>标题：</span>
-                        <input type="text">
-                    </div>
-                    <div>
-                        <span>链接地址：</span>
-                        <input type="text">
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="Jfooter">
-            <button class="Jfooter_fabu">发布</button>
-        </div>
+
     </div>
 
 </body>
 <script src="./jquery-3.3.1.js"></script>
 <script>
-    var li = document.querySelectorAll('li');
-    for(var i = 0; i < li.length; i++) {
-        li[i].onclick = function(ev) {
-            console.log('nihao')
-            
-            ev.stopPropagation()
-            ev.preventDefault()
-        }
-    }
-    // li.onclick = function() {
-        // console.log('fasfad')
-    // }
-    var i = ''
-    var c = ''
-    console.log(i.length)
-    console.log(c.length)
-    function test() {}
-    console.log($.isFunction(test))
-    var obj = {}
-    // console.log('fads')
-    // console.log($.toType(test))
-    // console.log($.toType(obj));
+    console.log(na)
+    var body = document.querySelector('body');
+    var Jwrap = document.querySelector('.Jwrap');
+    console.log(window.screenX)
+    $('.Jwrap').click(function (event) {
+        console.log(event)
+        console.log('screenX：' + event.screenX);
+        console.log('screenY：' + event.screenY);
+        console.log('clientX：' + event.clientX);
+        console.log('clientY：' + event.clientY);
+        console.log('pageX：' + event.pageX);
+        console.log('pageY：' + event.pageY);
+        console.log('offsetX：' + event.offsetX);
+        console.log('offsetY：' + event.offsetY);
+
+        // 
+        console.log('offsetLeft：' + Jwrap.offsetLeft);
+        console.log('offsetTop：' + Jwrap.offsetTop);
+
+        console.log('offsetLeft：' + event.target.offsetLeft);
+        console.log('offsetTop：' + event.target.offsetTop);
+        // console.log('scroolTop：' + event.scroolTop)
+        console.log("不属于event事件，jq的width()获取元素的宽："+$('.Jwrap').width());
+        console.log("不属于event事件，offsetWidth属性，原生获取元素的宽："+$('.Jwrap').get(0).offsetWidth);
+        
+    })
+    $('.Jwrap').hover(function(event) {
+        console.log('fadf')
+    })
+    $('li').hover(function(event) {
+        $('li').css('background', 'red');
+        $(this).css('background', 'orange')
+        console.log($(this).index())
+    })
+    $(document).scroll(function(event) {
+        console.log(event)
+        // console.log(window.scrollTop)
+        var top = $(window).scrollTop()
+        console.log(top)
+    })
+
 </script>
 
 </html>
