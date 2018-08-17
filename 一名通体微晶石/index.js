@@ -1,19 +1,19 @@
-$(function() {
+$(function () {
     // 遮罩
-    var $evolution_img_text_div = $('.evolution_img_text>div');
-    var $zhezhao = $('.zhezhao');
-    $evolution_img_text_div.mouseover(function(item) {
-        var index = $(this).index();
-        $($zhezhao[index]).css({
-            'z-index': '1'
+        var $evolution_img_text_div = $('.evolution_img_text>div');
+        var $zhezhao = $('.zhezhao');
+        $evolution_img_text_div.mouseover(function(item) {
+            var index = $(this).index();
+            $($zhezhao[index]).css({
+                'z-index': '1'
+            })
         })
-    })
-    $evolution_img_text_div.mouseleave(function(item) {
-        var index = $(this).index();
-        $($zhezhao[index]).css({
-            'z-index': '-1'
+        $evolution_img_text_div.mouseleave(function(item) {
+            var index = $(this).index();
+            $($zhezhao[index]).css({
+                'z-index': '-1'
+            })
         })
-    })
 })
 
 
@@ -45,7 +45,7 @@ $(function () {
         },
     });
 
-    // 微晶先生活
+    微晶先生活
     var swiper_microlite_live = new Swiper('#swiper_microlite_live', {
         loop: false,
         // 如果需要分页器
@@ -66,7 +66,7 @@ $(function () {
         var activeIndex = swiper_microlite_live.activeIndex
         var li = $('.live_thumbnail>ul>li');
         if (index != activeIndex) {
-            // console.log('fadfas')
+            console.log('fadfas')
             if (activeIndex == 0) {
                 $(".live_thumbnail>ul").animate({
                     'top': 0
@@ -85,4 +85,20 @@ $(function () {
             index = activeIndex;
         }
     }, 10)
+    // 搜索
+    $('.selected').click(function () {
+        $('#selectUl').css({
+            'display': 'block'
+        })
+    })
+
+    $('#selectUl li').click(function () {
+        var newli = $(this).html();
+        $('.selected').html($(newli).attr('id', 'selectedText'));
+        $('#selectUl').css({
+            'display': 'none'
+        });
+        var index = $(this).index();
+        $($('.sou form').css('display', 'none').get(index)).css('display', 'block');
+    })
 })

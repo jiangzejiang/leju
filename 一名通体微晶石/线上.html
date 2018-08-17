@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="./index.css"> -->
+    <link rel="stylesheet" href="http://jiaju.sina.com.cn/5892968984130955521/2018/0817/6436097881253675471.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="http://jiaju.sina.com.cn/5892968984130955521/2018/0817/6436126102481338562.css">
+    <link rel="stylesheet" type="text/css" href="http://jiaju.sina.com.cn/media/redesign/common.css"> ${SEO部分}
+
+    <!-- 贾 -->
+    <link rel="stylesheet" href="http://jiaju.sina.com.cn/5892968984130955521/2018/0130/6363930765411287896.css">
+<!-- 广告测试 -->
+</head>
+
+<body>
+    ${媒体改版公用头部}
+    <div id="logo" class="m1200 clear">
+        <div class="logo">
+            <a title="新浪家居" target="_blank" href="http://jiaju.sina.com.cn/">
+                <img src="http://src.leju.com/imp/imp/deal/03/93/5/051d77fcc8cf466e760f4c60_p24_mk24.png" alt="" />
+            </a>
+        </div>
+        <!-- 频道信息 -->
+        <div class="pdName">
+            <h2>大板瓷抛砖频道</h2>
+            <div class="gg0" id="b01"></div>
+        </div>
+        <div class="seek">
+            <div class="sou">
+                <div class="mSelect">
+                    <ul id="selected_item">
+                        <li class="selected">
+                            <a href="javascript:;" target="_self" id="selectedText">家居品牌</a>
+                        </li>
+                    </ul>
+                    <ul id="selectUl">
+                        <li name="01">
+                            <a href="javascript:;" target="_self">新闻</a>
+                        </li>
+                        <li name="02">
+                            <a href="javascript:;" target="_self">装修图片</a>
+                        </li>
+                        <li name="03">
+                            <a href="javascript:;" target="_self">装修公司</a>
+                        </li>
+                        <li name="04">
+                            <a href="javascript:;" target="_self">家居品牌</a>
+                        </li>
+                    </ul>
+                </div>
+                <form id="hideform_01" class="hideform" onsubmit="return jiaju_index_search('news',this) " style="display: none;">
+                    <input type="hidden" name="city" value="jiaju">
+                    <input name="keyword" class="seek-txt" type="text" autocomplete="off" onclick="if(this.value=='输入关键词') this.value=''" onblur="if(this.value=='') this.value='输入关键词'"
+                        value="输入关键词">
+                    <input class="seek-btn" type="submit" value="">
+                </form>
+                <form style="display: none;" id="hideform_02" onsubmit="return jiaju_index_search('picture',this)" class="hideform">
+                    <input type="text" value="输入关键词，看美图" onblur="if(this.value=='') this.value='输入关键词，看美图'" onclick="if(this.value=='输入关键词，看美图') this.value=''"
+                        autocomplete="off" class="seek-txt" name="keyword">
+                    <input type="submit" value="" class="seek-btn">
+                </form>
+                <form id="hideform_03" onsubmit="return jiaju_index_search('company',this)" class="hideform" style="display: none;">
+                    <input type="text" value="输入关键词，找靠谱公司" onblur="if(this.value=='') this.value='输入关键词，找靠谱公司'" onclick="if(this.value=='输入关键词，找靠谱公司') this.value=''"
+                        autocomplete="off" class="seek-txt" name="keyword">
+                    <input type="submit" value="" class="seek-btn">
+                </form>
+                <form id="hideform_04" onsubmit="return jiaju_index_search('brand',this)" class="hideform" style="display: block;">
+                    <input type="text" value="输入关键词，看口碑、找优惠" onblur="if(this.value=='') this.value='输入关键词，看口碑、找优惠'" onclick="if(this.value=='输入关键词，看口碑、找优惠') this.value=''"
+                        autocomplete="off" class="seek-txt" name="keyword">
+                    <input type="submit" value="" class="seek-btn">
+                </form>
+            </div>
+            <div id="b02"></div>
+        </div>
+    </div>
+    
+
+    <div class="wrap">
+        <!-- nav -->
+        ${导航条}
+        <!-- banner -->
+        <div class="banner">
+            <div id="swiper-container-banner" class="swiper-container">
+                ${导航条下的焦点图}
+
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination swiper-pagination-banner"></div>
+
+                <!-- 如果需要导航按钮 -->
+                <div class="color-left color">
+                    <</div>
+                        <div class="color-right color">></div>
+                        <!-- </div> -->
+                </div>
+            </div>
+            <!-- 微晶大家说 -->
+            <div id="famous_person" class="famous_person">
+                <div>
+                    <img src="http://src.leju.com/imp/imp/deal/9a/c8/8/884908b9985736f5b585c47ea4e_p24_mk24.png" alt="">
+                </div>
+                <div class="famous_person_bottom">
+                    <div id="famous_person_banner" class="swiper-container">
+
+                        ${微晶大家说}
+                        <!-- 如果需要导航按钮 -->
+                        <div class="color-left-famous color-famous">
+                            <</div>
+                                <div class="color-right-famous color-famous">></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 微晶进化论 -->
+            <div id="my_evolution" class="evolution_bg">
+                <div id="evolution">
+                    <div>
+                        <img src="http://src.leju.com/imp/imp/deal/69/8f/7/c199e3b59c2d0045185cd9ac00e_p24_mk24.png" alt="">
+                    </div>
+                    ${微晶进化论}
+
+                </div>
+            </div>
+
+            <!-- 微晶先生活 -->
+            <div id="my_live" class="microlite_live">
+                <div>
+                    <img src="http://src.leju.com/imp/imp/deal/ee/60/c/e08107eb131de05b1ab72468a43_p24_mk24.png" alt="">
+                </div>
+                <div>
+                    <div id="swiper_microlite_live" class="swiper-container">
+                        ${微晶先生活}
+
+                        <!-- 如果需要分页器 -->
+                        <div class="swiper-pagination microlite_live_banner"></div>
+
+                        <!-- 如果需要导航按钮 -->
+                        <div class="live-button live-left-color">
+                            <</div>
+                                <div class="live-button live-right-color">></div>
+
+                        </div>
+                        <!-- 改 -->
+                        <div class="live_thumbnail">
+                            <ul>
+                                <li class="active_li">
+                                    <img src="http://src.leju.com/imp/imp/deal/d5/8f/5/0ff37a2205d49057ef43ba09dd9_p24_mk24.png" alt="">
+                                    <div class="sanjiao"></div>
+                                    <p>工业</p>
+                                </li>
+                                <li>
+                                    <img src="http://src.leju.com/imp/imp/deal/d5/8f/5/0ff37a2205d49057ef43ba09dd9_p24_mk24.png" alt="">
+                                    <p>家用</p>
+                                    <div class="sanjiao"></div>
+
+                                </li>
+                                <li>
+                                    <img src="http://src.leju.com/imp/imp/deal/d5/8f/5/0ff37a2205d49057ef43ba09dd9_p24_mk24.png" alt="">
+                                    <p>市政工程</p>
+                                    <div class="sanjiao"></div>
+
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- 微晶新浪潮 -->
+            <div id="my_wave" class="microlite_wave">
+                <div class="wave_img">
+                    <img src="http://src.leju.com/imp/imp/deal/96/bb/c/3fe342fc43c95eabeb81135ca5b_p24_mk24.png" alt="">
+                </div>
+                ${微晶新浪潮}
+            </div>
+            <!-- 关注一名微晶 -->
+            <div id="microlite_attention">
+                <div class="attention_img">
+                    <img src="http://src.leju.com/imp/imp/deal/ff/73/9/396d04434676ab13b25ba9e446a_p24_mk24.png" alt="">
+                </div>
+                <div class="attention_desc">
+                    <ul>
+                        <li class="attention_kefu">
+                            <p>客户服务热线</p>
+                            <p>${客服热线电话}</p>
+                        </li>
+                        <li class="attention_lianjie">
+                            <a href="">
+                                <img src="http://src.leju.com/imp/imp/deal/ff/bc/b/9c3c6ea7f828e13f5ed9345d990_p24_mk24.png" alt="">
+                            </a>
+                            <a href="">
+                                <img src="http://src.leju.com/imp/imp/deal/98/e0/e/b384c8840d38edab3e4ddda7264_p24_mk24.png" alt="">
+                            </a>
+                        </li>
+                        <li class="attention_wechat">
+                            <div class="logos">
+                                <img src="http://src.leju.com/imp/imp/deal/63/c6/d/77ef38b65b16ce0ca5bcc53d9fc_p24_mk24.png" alt="">
+                                <p>官方微信</p>
+                            </div>
+                            <div class="rq_code">
+                                <img src=${官方微信二维码} alt="">
+                                <!-- <img src="http://src.leju.com/imp/imp/deal/12/c3/e/3b85c006d65045ecf2d9b5155b6_p24_mk24.png" alt=""> -->
+                            </div>
+                        </li>
+                        <li class="attention_sina">
+                            <div class="logos">
+                                <img src="http://src.leju.com/imp/imp/deal/c5/f0/e/050c6d1090e31f2b5adfeb77f38_p24_mk24.png" alt="">
+                                <p>官方微博</p>
+                            </div>
+                            <div class="rq_code">
+                                <img src=${官方微博二维码} alt="">
+                                <!-- <img src="http://src.leju.com/imp/imp/deal/12/c3/e/3b85c006d65045ecf2d9b5155b6_p24_mk24.png" alt=""> -->
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            ${媒体改版公用尾部}
+
+</body>
+<!-- <script src="./index.js"></script> -->
+<script src="http://jiaju.sina.com.cn/5892969810001996304/2018/0817/6436125974752199082.js"></script>
+<script src="http://static.jiaju.com/jiaju/com/js/dojquery-s-min.js" charset="UTF-8"></script>
+<!-- swiper -->
+<script src="http://jiaju.sina.com.cn/5892969810001996304/2018/0817/6436099424770130598.js"></script>
+<!-- 广告测试 -->
+<script type="text/javascript" src="http://static.jiaju.com/jiaju/com/ad/js/cmslead.js"></script>
+<script src="http://adm.leju.sina.com.cn/get_ad_list/PG_57A941E54F7FE2?callback=ads.processReqChange"></script>
+
+<script>
+
+</script>
+
+</html>
