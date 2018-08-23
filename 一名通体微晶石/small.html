@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./index.css"> -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #focal01.focal {
+            position: relative;
+            overflow: hidden;
+        }
+
+        #focal01 .scroll-wrap-inner ul {
+            width: 100%;
+            position: absolute;
+        }
+
+        #focal01 .scroll-wrap-inner ul li {
+            float: left;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        #focal01 .scroll-wrap-inner li a,
+        #focal01 .scroll-wrap-inner li a img {
+            display: block;
+        }
+
+        #focal01 .focal-btn span {
+            height: 60px;
+            width: 60px;
+            position: absolute;
+            top: 45%;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-size: 45px;
+            text-align: center;
+            line-height: 60px;
+            cursor: pointer;
+        }
+
+        #focal01 .focal-btn .focal-btn-lt {
+            left: 18%;
+        }
+
+        #focal01 .focal-btn .focal-btn-rt {
+            right: 18%;
+        }
+
+        #focal01 .focal-btn .focal-tab {
+            position: absolute;
+            bottom: 24px;
+            right: 12px;
+        }
+
+        #focal01 .focal-tab li {
+            float: left;
+            height: 8px;
+            width: 8px;
+            line-height: 0;
+            list-style-type: none;
+            font-size: 0;
+            background: #bababd;
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        #focal01 .focal-tab li.focal_active {
+            border: 2px solid #fff;
+            vertical-align: top;
+            margin-top: -2px;
+        }
+
+
+        #focal01 #intro {
+            position: absolute;
+            left: 0;
+            bottom: 68px;
+            width: 100%;
+            font-size: 36px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .scroll-wrap-inner {
+            overflow: auto;
+
+        }
+
+        body {
+            height: 20000px;
+        }
+    </style>
+</head>
+<script src="./dojquery-s-min.js"></script>
+
+<body>
+    <div class="focal" id="focal01">
+        <div class="focal-con">
+            <div class="scroll-wrap-inner">
+                <ul>
+                    <li>
+                        <a href="javascript:;" target="_blank">
+                            <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石一">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" target="_blank">
+                            <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石二">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" target="_blank">
+                            <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石三">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p id="intro"></p>
+        <div class="focal-btn">
+            <span class="focal-btn-lt">
+                <</span>
+                    <span class="focal-btn-rt">></span>
+                    <ol class="focal-tab">
+                        <li class="focal_active"></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+        </div>
+    </div>
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
+    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
+
+</body>
+<script type="text/javascript" src="http://static.jiaju.com/jiaju/com/ad/js/cmslead.js"></script>
+<script src="http://adm.leju.sina.com.cn/get_ad_list/PG_5B740601B672C0?callback=ads.processReqChange"></script>
+
+<script>
+
+    $(function () {
+        var resetFocusSize = function () {
+            var width = $(window).width();
+            $(".focal,.focal ul li,.focal ul li a,.focal img").css({
+                width: width,
+                height: width * 688 / 1920
+            });
+        }
+
+        var changeFn = function () {
+            var index = $("#focal01 li[class=focal_active]").index();
+            var text = $("#focal01 ul>li").eq(index).find("img").attr("alt");
+            $("#intro").text(text)
+        }
+
+        resetFocusSize();
+        // setInterval(resetFocusSize, 10)
+        changeFn();
+        dj.get("ui.focusimg", ["ui.gun"], function () {
+            jQuery("#focal01 .scroll-wrap-inner>ul").focusimg({
+                item: "li",
+                index: 0,
+                auto: true,
+                interval: 5000,
+                vertical: false,
+                circle: true,
+                prev: "#focal01 .focal-btn-lt",
+                next: "#focal01 .focal-btn-rt",
+                smallimg: $("#focal01 ol li"),
+                smallevent: "mouseover",
+                smallSelectedClass: "focal_active",
+                onFocusimgChanged: changeFn,
+            });
+        });
+
+        function sayHello() {
+            console.log('rqerqwerqwerqerqwerqe')
+        }
+        $(window).resize(function () {
+            resetFocusSize();
+        })
+    })
+    $(function () {
+        // 图片懒加载
+        (function lazyload() {
+            var ImgList = $('img');
+            ImgList.each(function (index, item) {
+                var dataSrc = $(this).attr('src')
+                $(this).attr({ 'data-src': dataSrc }).removeAttr('src').attr('src', 'http://src.leju.com/imp/imp/deal/03/93/5/051d77fcc8cf466e760f4c60_p24_mk24.png');
+            })
+            $(window).scroll(lazyload);
+            function lazyload() {
+                var wtop = $(window).scrollTop();
+                var wheight = $(window).height();
+                ImgList.each(function (index, item) {
+                    var imgTop = ImgList.eq(0).offset().top;
+                    if (imgTop - wtop < wheight) {
+                        var src = ImgList.eq(0).attr('data-src');
+                        ImgList.eq(0).attr('src', src)
+                        ImgList.splice(0, 1);
+                    }
+                })
+            }
+            lazyload();
+        })();
+    });
+
+</script>
+
+</html>

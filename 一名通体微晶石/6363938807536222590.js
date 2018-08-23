@@ -17,7 +17,6 @@ $(document).ready(function() {
 			$('.scroll-wrap-inner li>a').eq(i).css({'backgroundImage':'url('+thisUrl+')'});
 	
 	
-		
 
 	};
 	
@@ -136,7 +135,7 @@ $(document).ready(function() {
     //
     //聚焦实验室
     $('.sys-box .btn').click(function(){
-    	tab($(this),true)
+    	tab($(this),false)
     })
     $('.sys-box ol li').mouseover(function(){
     	var index=$(this).index();
