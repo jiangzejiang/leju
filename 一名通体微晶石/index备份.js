@@ -15,53 +15,53 @@ $(function () {
     });
 
     // 微晶先生活
-    dj.get("ui.focusimg", ["ui.gun"], function () {
-        jQuery("#swiper_microlite_live1 .scroll-wrap-inner>ul").focusimg({
-            item: "li",
-            index: 0,
-            auto: true,
-            interval: 3000,
-            vertical: false,
-            circle: true,
-            prev: "#swiper_microlite_live1 .focal-btn-lt",
-            next: "#swiper_microlite_live1 .focal-btn-rt",
-            smallimg: $("#swiper_microlite_live1 ol li"),
-            smallevent: "mouseover",
-            smallSelectedClass: "focal_active",
-
-        });
+    var swiper_microlite_live_one = new Swiper('#swiper_microlite_live_one', {
+        autoplay: true,
+        loop: true,
+        // 如果需要分页器
+        pagination: {
+            el: '.microlite_live_banner_one',
+            clickable: true,
+        },
+        // 如果需要前进后退按钮
+        navigation: {
+            prevEl: '.live-left-color1',
+            nextEl: '.live-right-color1',
+            hideOnClick: true,
+        },
     });
-    dj.get("ui.focusimg", ["ui.gun"], function () {
-        jQuery("#swiper_microlite_live2 .scroll-wrap-inner>ul").focusimg({
-            item: "li",
-            index: 0,
-            auto: true,
-            interval: 3000,
-            vertical: false,
-            circle: true,
-            prev: "#swiper_microlite_live2 .focal-btn-lt",
-            next: "#swiper_microlite_live2 .focal-btn-rt",
-            smallimg: $("#swiper_microlite_live2 ol li"),
-            smallevent: "mouseover",
-            smallSelectedClass: "focal_active",
 
-        });
+
+    var swiper_microlite_live_two = new Swiper('#swiper_microlite_live_two', {
+        autoplay: true,
+        loop: true,
+        // 如果需要分页器
+        pagination: {
+            el: '.microlite_live_banner_two',
+            clickable: true,
+        },
+        // 如果需要前进后退按钮
+        navigation: {
+            prevEl: '.live-left-color2',
+            nextEl: '.live-right-color2',
+            hideOnClick: true,
+        },
     });
-    dj.get("ui.focusimg", ["ui.gun"], function () {
-        jQuery("#swiper_microlite_live3 .scroll-wrap-inner>ul").focusimg({
-            item: "li",
-            index: 0,
-            auto: true,
-            interval: 3000,
-            vertical: false,
-            circle: true,
-            prev: "#swiper_microlite_live3 .focal-btn-lt",
-            next: "#swiper_microlite_live3 .focal-btn-rt",
-            smallimg: $("#swiper_microlite_live3 ol li"),
-            smallevent: "mouseover",
-            smallSelectedClass: "focal_active",
 
-        });
+    var swiper_microlite_live_three = new Swiper('#swiper_microlite_live_three', {
+        autoplay: true,
+        loop: true,
+        // 如果需要分页器
+        pagination: {
+            el: '.microlite_live_banner_three',
+            clickable: true,
+        },
+        // 如果需要前进后退按钮
+        navigation: {
+            prevEl: '.live-left-color3',
+            nextEl: '.live-right-color3',
+            hideOnClick: true,
+        },
     });
     var index = 0;
     var li = $('.live_thumbnail>ul>li');
@@ -121,7 +121,7 @@ $(function () {
         li.removeClass('active_li');
         $(this).addClass('active_li');
         var index = $(this).index();
-        var swiper = $('.all_swiper_microlite_live .focal');
+        var swiper = $('#my_live .swiper-container');
         swiper.removeClass('block').addClass('none');
         swiper.eq(index).removeClass('none').addClass('block')
         // swiper_microlite_live.slideTo(index + 1, 300, false);

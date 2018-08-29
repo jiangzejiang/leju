@@ -1,0 +1,18 @@
+ads.processReqChange({
+    "status": true,
+    "data": [
+        {
+            "id": "cdm_5b7b7cfe2baa1",
+            "pdps": "PDPS_5B752684A63302",
+            "position": "T02-1-1",
+            "params": {
+                "type": "banner",
+                "src": "http://d1.leju.com/ia/2018/08/21/f5b7b7cd3d94a8img.jpg",
+                "width": 1200, "height": 60,
+                "link": "http://jiaju.sina.com.cn/news/20180810/6433595609718260392.shtml?wt_campaign=M_5B7B7CF482D4B&wt_source=PDPS_5B752684A63302",
+                "imp_url": ""
+            },
+            "priviledge": "0"
+        },
+        { "id": "cdm_5b7b812606eb6", "pdps": "PDPS_5B752431C491E5", "position": "B01", "params": { "type": "exnamed", "src": ["http://d1.leju.com/ia/2018/08/21/f5b7b80770612fimg.jpg", "http://d1.leju.com/ia/2018/08/21/f5b7b80770612fimg.jpg"], "attributes": [{ "width": 180, "height": 40, "top": "", "right": 0 }, { "width": 180, "height": 40, "top": "", "right": 0 }], "link": "http://jiaju.sina.com.cn/news/20180810/6433595609718260392.shtml?wt_campaign=M_5B7B809C83D14&wt_source=PDPS_5B752431C491E5", "zIndex": 1, "imp_url": "" }, "priviledge": "0" }, { "id": "cdm_5b7bd9fc8b2ea", "pdps": "PDPS_5B7525E8CCDB41", "position": "T00", "params": { "type": "focus", "wrapId": "", "src": "http://d1.leju.com/ia/2018/08/21/f5b7bd959c6fedimg.jpg", "width": 1920, "height": 688, "alt": "", "link": "http://jiaju.sina.com.cn/zt/2018zmybjlist/?wt_campaign=M_5B7BD9ED3ADB6&wt_source=PDPS_5B7525E8CCDB41", "imp_url": "" }, "priviledge": "0" }]
+});

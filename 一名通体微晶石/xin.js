@@ -1,10 +1,33 @@
-
+// $(function () {
+//     // 鍥剧墖鎳掑姞杞�
+//     (function lazyload() {
+//         var ImgList = $('img');
+//         ImgList.each(function (index, item) {
+//             var dataSrc = $(this).attr('src')
+//             $(this).attr({ 'data-src': dataSrc }).removeAttr('src').attr('src', 'http://src.leju.com/imp/imp/deal/03/93/5/051d77fcc8cf466e760f4c60_p24_mk24.png');
+//         })
+//         $(window).scroll(lazyload);
+//         function lazyload() {
+//             var wtop = $(window).scrollTop();
+//             var wheight = $(window).height();
+//             ImgList.each(function (index, item) {
+//                 var imgTop = ImgList.eq(0).offset().top;
+//                 if (imgTop - wtop < wheight) {
+//                     var src = ImgList.eq(0).attr('data-src');
+//                     ImgList.eq(0).attr('src', src)
+//                     ImgList.splice(0, 1);
+//                 }
+//             })
+//         }
+//         lazyload();
+//     })();
+// });
 $(function () {
-    // 微晶大家说
+    // 寰櫠澶у璇�
     var famous_person_banner = new Swiper('#famous_person_banner', {
         autoplay: true,
         loop: true,
-        // 如果需要前进后退按钮
+        // 濡傛灉闇€瑕佸墠杩涘悗閫€鎸夐挳
         speed: 300,
         // effect: 'fade',
         navigation: {
@@ -14,55 +37,53 @@ $(function () {
         },
     });
 
-    // 微晶先生活
-    dj.get("ui.focusimg", ["ui.gun"], function () {
-        jQuery("#swiper_microlite_live1 .scroll-wrap-inner>ul").focusimg({
-            item: "li",
-            index: 0,
-            auto: true,
-            interval: 3000,
-            vertical: false,
-            circle: true,
-            prev: "#swiper_microlite_live1 .focal-btn-lt",
-            next: "#swiper_microlite_live1 .focal-btn-rt",
-            smallimg: $("#swiper_microlite_live1 ol li"),
-            smallevent: "mouseover",
-            smallSelectedClass: "focal_active",
+    // 寰櫠鍏堢敓娲�
+    var swiper_microlite_live1 = new Swiper('#swiper_microlite_live1', {
+        autoplay: true,
+        loop: true,
+        // 濡傛灉闇€瑕佸垎椤靛櫒
+        pagination: {
+            el: '.microlite_live_banner1',
+            clickable: true,
+        },
+        // 濡傛灉闇€瑕佸墠杩涘悗閫€鎸夐挳
+        navigation: {
+            prevEl: '.live-left-color1',
+            nextEl: '.live-right-color1',
+            hideOnClick: true,
+        },
+    })
+    var swiper_microlite_live2 = new Swiper('#swiper_microlite_live2', {
+        autoplay: true,
+        loop: true,
+        // 濡傛灉闇€瑕佸垎椤靛櫒
+        pagination: {
+            el: '.microlite_live_banner2',
+            clickable: true,
+        },
+        // 濡傛灉闇€瑕佸墠杩涘悗閫€鎸夐挳
+        navigation: {
+            prevEl: '.live-left-color2',
+            nextEl: '.live-right-color2',
+            hideOnClick: true,
+        },
+    })
 
-        });
-    });
-    dj.get("ui.focusimg", ["ui.gun"], function () {
-        jQuery("#swiper_microlite_live2 .scroll-wrap-inner>ul").focusimg({
-            item: "li",
-            index: 0,
-            auto: true,
-            interval: 3000,
-            vertical: false,
-            circle: true,
-            prev: "#swiper_microlite_live2 .focal-btn-lt",
-            next: "#swiper_microlite_live2 .focal-btn-rt",
-            smallimg: $("#swiper_microlite_live2 ol li"),
-            smallevent: "mouseover",
-            smallSelectedClass: "focal_active",
-
-        });
-    });
-    dj.get("ui.focusimg", ["ui.gun"], function () {
-        jQuery("#swiper_microlite_live3 .scroll-wrap-inner>ul").focusimg({
-            item: "li",
-            index: 0,
-            auto: true,
-            interval: 3000,
-            vertical: false,
-            circle: true,
-            prev: "#swiper_microlite_live3 .focal-btn-lt",
-            next: "#swiper_microlite_live3 .focal-btn-rt",
-            smallimg: $("#swiper_microlite_live3 ol li"),
-            smallevent: "mouseover",
-            smallSelectedClass: "focal_active",
-
-        });
-    });
+    var swiper_microlite_live3 = new Swiper('#swiper_microlite_live3', {
+        autoplay: true,
+        loop: true,
+        // 濡傛灉闇€瑕佸垎椤靛櫒
+        pagination: {
+            el: '.microlite_live_banner3',
+            clickable: true,
+        },
+        // 濡傛灉闇€瑕佸墠杩涘悗閫€鎸夐挳
+        navigation: {
+            prevEl: '.live-left-color3',
+            nextEl: '.live-right-color3',
+            hideOnClick: true,
+        },
+    })
     var index = 0;
     var li = $('.live_thumbnail>ul>li');
     var bannerLi = $('#swiper-container-banner>ul>li');
@@ -110,7 +131,7 @@ $(function () {
         }
 
     }, 10)
-    // 点击右侧li联动banner
+    // 鐐瑰嚮鍙充晶li鑱斿姩banner
     li.click(function () {
         var index = $(this).index();
         swiper_microlite_live.slideTo(index + 1, 300, false);
@@ -121,14 +142,14 @@ $(function () {
         li.removeClass('active_li');
         $(this).addClass('active_li');
         var index = $(this).index();
-        var swiper = $('.all_swiper_microlite_live .focal');
+        var swiper = $('#my_live .swiper-container');
         swiper.removeClass('block').addClass('none');
         swiper.eq(index).removeClass('none').addClass('block')
         // swiper_microlite_live.slideTo(index + 1, 300, false);
     })
 
 
-    // 搜索
+    // 鎼滅储
     $('.selected').click(function () {
         $('#selectUl').css({
             'display': 'block'
@@ -151,7 +172,7 @@ $(function () {
 
     var resetFocusSize = function () {
         var width = $(window).width();
-        $("#focal01.focal,#focal01.focal ul li,#focal01.focal ul li a,#focal01.focal img").css({
+        $(".focal,.focal ul li,.focal ul li a,.focal img").css({
             width: width,
             height: width * 688 / 1920
         });

@@ -1,284 +1,434 @@
-<!DOCTYPE html>
-
-
-
-<html lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <!-- <link rel="stylesheet" href="./index.css"> -->
-    <style>
-        * {
-            padding: 0;
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>lazyload()</title>
+    <style type="text/css">
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        dl,
+        dt,
+        dd,
+        ul,
+        ol,
+        li,
+        table,
+        th,
+        td,
+        p,
+        blockquote,
+        pre,
+        form,
+        fieldset,
+        legend,
+        hr,
+        img {
             margin: 0;
+            padding: 0;
+            border: 0;
         }
 
-        #focal01.focal {
-            position: relative;
-            overflow: hidden;
-        }
-
-        #focal01 .scroll-wrap-inner ul {
-            width: 100%;
-            position: absolute;
-        }
-
-        #focal01 .scroll-wrap-inner ul li {
-            float: left;
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        #focal01 .scroll-wrap-inner li a,
-        #focal01 .scroll-wrap-inner li a img {
-            display: block;
-        }
-
-        #focal01 .focal-btn span {
-            height: 60px;
-            width: 60px;
-            position: absolute;
-            top: 45%;
-            z-index: 100;
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            font-size: 45px;
-            text-align: center;
-            line-height: 60px;
-            cursor: pointer;
-        }
-
-        #focal01 .focal-btn .focal-btn-lt {
-            left: 18%;
-        }
-
-        #focal01 .focal-btn .focal-btn-rt {
-            right: 18%;
-        }
-
-        #focal01 .focal-btn .focal-tab {
-            position: absolute;
-            bottom: 24px;
-            right: 12px;
-        }
-
-        #focal01 .focal-tab li {
-            float: left;
-            height: 8px;
-            width: 8px;
-            line-height: 0;
-            list-style-type: none;
-            font-size: 0;
-            background: #bababd;
-            margin-right: 8px;
-            cursor: pointer;
-        }
-
-        #focal01 .focal-tab li.focal_active {
-            border: 2px solid #fff;
-            vertical-align: top;
-            margin-top: -2px;
-        }
-
-
-        #focal01 #intro {
-            position: absolute;
-            left: 0;
-            bottom: 68px;
-            width: 100%;
-            font-size: 36px;
-            color: #fff;
-            text-align: center;
-        }
-
-        .scroll-wrap-inner {
-            overflow: auto;
-
+        em,
+        i,
+        cite {
+            font-style: normal;
         }
 
         body {
-            height: 20000px;
+            background: #fff;
+            font-size: 12px;
+            font-family: simsun;
+            color: #666;
+        }
+
+        ul,
+        ol {
+            list-style-type: none;
+        }
+
+        select,
+        input,
+        textarea,
+        img {
+            vertical-align: middle;
+            padding: 0px;
+            margin: 0px;
+            line-height: 150%
+        }
+
+        :focus {
+            outline: 0;
+        }
+
+        .overflow {
+            overflow: hidden;
+        }
+
+        .overflow_x {
+            overflow_y: auto;
+            overflow_x: hidden;
+        }
+
+        .overflow_y {
+            overflow_x: auto;
+            overflow_y: hidden;
+        }
+
+        .clearfix:after {
+            /*/*/
+            content: ".";
+            /* IE8 hack */
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .clearfix {
+            display: inline-block;
+        }
+
+        *html .clearfix {
+            height: 1%;
+        }
+
+        .clearfix {
+            display: block;
+        }
+
+        .clear {
+            clear: both
+        }
+
+        .clea {
+            clear: both;
+            height: 0px;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin: 32px 0;
+        }
+
+        h2 {
+            margin: 26px 0;
+        }
+
+        body,
+        html {
+            line-height: 24px;
+            font-size: 12px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            background: #999;
+            line-height: 48px;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: bold;
+            background: #ddd;
+            line-height: 32px;
+        }
+
+        pre {
+            width: 600px;
+            border: 1px solid #A19A90;
+            padding: 10px;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+        }
+
+        table.listing {
+            border: 1px solid #ccc;
+            background-color: #f0f1f2;
+            margin: 10px 0 15px 0;
+            padding: 10px;
+            /* outline radius */
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+        }
+
+        .listing {
+            outline: 0 !important;
+        }
+
+        table.listing {
+            width: 100%;
+            background-color: #fff;
+        }
+
+        table.listing td {
+            border-bottom: 1px solid #ddd;
+            padding: 5px;
+        }
+
+        table.listing a:hover {
+            color: #000;
+        }
+
+        table.listing a:hover span {
+            color: #333;
+        }
+
+        th {
+            background: #C2CDD5;
+            text-align: left;
+            padding: 5px;
+            border-bottom: 5px solid #fff;
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+        table.listing td img {
+            cursor: pointer;
+        }
+
+        th.sort {
+            cursor: pointer;
+            background-color: #A2D0DA;
+            border-left: 1px solid #FFFFFF !important;
+        }
+
+        th.sort.asc,
+        th.sort.desc {
+            background-color: #ffD0DA;
+        }
+
+        /* api listings */
+
+        th.col1 {
+            width: 120px;
+        }
+
+        td.code {
+            color: blue;
+            width: 120px;
+        }
+
+        .type {
+            color: #789;
+            font-family: "courier new", courier;
+        }
+
+        td.default {
+            color: #345;
+            width: 80px;
+        }
+
+        td.type {
+            color: navy;
+        }
+
+        td.code em {
+            color: #666;
+            font-style: normal;
+        }
+
+        td.description {
+            color: #333;
+            font-size: 12px;
+        }
+
+        td.code i {
+            font-style: normal;
+            color: #666;
+        }
+
+        .pre {
+            white-space: pre;
+        }
+
+        .code strong {
+            color: navy;
         }
     </style>
 </head>
-<script src="./dojquery-s-min.js"></script>
 
 <body>
-    <div class="focal" id="focal01">
-        <div class="focal-con">
-            <div class="scroll-wrap-inner">
-                <ul>
-                    <li>
-                        <a href="javascript:;" target="_blank">
-                            <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石一">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" target="_blank">
-                            <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石二">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" target="_blank">
-                            <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石三">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <p id="intro"></p>
-        <div class="focal-btn">
-            <span class="focal-btn-lt">
-                <</span>
-                    <span class="focal-btn-rt">></span>
-                    <ol class="focal-tab">
-                        <li class="focal_active"></li>
-                        <li></li>
-                        <li></li>
-                    </ol>
-        </div>
+    <!-- <h1>lazyload() 方法使用说明</h1>
+        <h2>一.简述</h2>
+        <p>
+            描述：lazyload方法用于延迟加载图片
+            <br/>
+            CSS支持：无需要css样式支持
+            <br/>
+            调用对象：$(elem)
+            <br/>
+        </p>
+        <h2>二.参数配制</h2>
+        <table class="listing">
+            <thead>
+                <tr>
+                    <th>
+                        属性
+                    </th>
+                    <th>
+                        默认值
+                    </th>
+                    <th>
+                        说明
+                    </th>
+                </tr>
+            </thead>
+            <tr>
+                <td class="code">
+                    container
+                </td>
+                <td>
+                    <code>
+                        window
+                    </code>
+                </td>
+                <td>
+                    容器
+                </td>
+            </tr>
+            <tr>
+                <td class="code">
+                    placeholder
+                </td>
+                <td>
+                    <code>
+                        ""
+                    </code>
+                </td>
+                <td>
+                    占位图
+                </td>
+            </tr>
+            <tr>
+                <td class="code">
+                    defined_src
+                </td>
+                <td>
+                    <code>
+                       'lsrc'
+                    </code>
+                </td>
+                <td>
+                    定义的图片src
+                </td>
+            </tr>
+            <tr>
+                <td class="code">
+                    threshold
+                </td>
+                <td>
+                    <code>
+                        0
+                    </code>
+                </td>
+                <td>
+                    加载范围阈值，百分比计算，最大值100
+                </td>
+            </tr>
+            <tr>
+                <td class="code">
+                    direction
+                </td>
+                <td>
+                    <code>
+                       1
+                    </code>
+                </td>
+                <td>
+                    运动方向
+                </td>
+            </tr>
+            <tr>
+                <td class="code">
+                    delay
+                </td>
+                <td>
+                    <code>
+                        100
+                    </code>
+                </td>
+                <td>
+                    延时时间
+                </td>
+            </tr>
+            <tr>
+                <td class="code">
+                    lock
+                </td>
+                <td>
+                    <code>
+                        false
+                    </code>
+                </td>
+                <td>
+                    延时锁
+                </td>
+            </tr>
+            <tr>
+                <td class="code">
+                    timer
+                </td>
+                <td>
+                    <code>
+                        null
+                    </code>
+                </td>
+                <td>
+                    定时器
+                </td>
+            </tr>
+        </table>
+        <h2>三.实例</h2>
+        <div class="box code">
+            <pre>
+            <code class="javascript">
+            dj.get("ui.lazyload",function(){
+                jQuery(".test img").lazyload({placeholder:"http://jiaju.sina.com.cn/images/index/grey.gif",threshold:50,defined_src:"lsrc"});
+            });
+            </code>
+            </pre>
+        </div> -->
+    <style type="text/css">
+        .test {
+            border: 1px solid #555;
+            padding: 20px;
+        }
+
+        .test img {
+            margin: 20px;
+        }
+    </style>
+    <div class="test">
+        <img class="v_img"  lsrc="http://static2.jiaju.com/malljiaju/goods/92/68/508dda6588f40031d1ef_m.jpg"/>
+        <img class="v_img"  lsrc="http://static2.jiaju.com/malljiaju/goods/92/68/508dda6588f40031d1ef_m.jpg"/>
+        <img class="v_img"  lsrc="http://static2.jiaju.com/malljiaju/goods/92/68/508dda6588f40031d1ef_m.jpg"/>
+        <img class="v_img"  lsrc="http://static2.jiaju.com/malljiaju/goods/92/68/508dda6588f40031d1ef_m.jpg"/>
+        <img class="v_img"  lsrc="http://static2.jiaju.com/malljiaju/goods/92/68/508dda6588f40031d1ef_m.jpg"/>
+        <img class="v_img"  lsrc="http://static2.jiaju.com/malljiaju/goods/92/68/508dda6588f40031d1ef_m.jpg"/>
+        <img class="v_img"  lsrc="http://static2.jiaju.com/malljiaju/goods/92/68/508dda6588f40031d1ef_m.jpg"/>
+        <img class="v_img"  lsrc="http://static2.jiaju.com/malljiaju/goods/92/68/508dda6588f40031d1ef_m.jpg"/>
+        <img class="v_img"  lsrc="http://static2.jiaju.com/malljiaju/goods/92/68/508dda6588f40031d1ef_m.jpg"/>
+        <img class="v_img"  lsrc="http://static2.jiaju.com/malljiaju/goods/92/68/508dda6588f40031d1ef_m.jpg"/>
+        <img class="v_img"  lsrc="http://static2.jiaju.com/malljiaju/goods/92/68/508dda6588f40031d1ef_m.jpg"/>
+        <img class="v_img"  lsrc="http://static2.jiaju.com/malljiaju/goods/92/68/508dda6588f40031d1ef_m.jpg"/>
+        <img class="v_img"  lsrc="http://static2.jiaju.com/malljiaju/goods/92/68/508dda6588f40031d1ef_m.jpg"/>
+        
     </div>
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石四">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石五">
-    <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石六">
-
+    <!-- 实例1代码 开始 -->
+    <script src="http://static.jiaju.com/jiaju/com/js/dojquery-s-min.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        dj.get("ui.lazyload", function () {
+            jQuery(".test img").lazyload({ placeholder: "http://jiaju.sina.com.cn/images/index/grey.gif", threshold: 50, defined_src: "lsrc" });
+        });    
+    </script>
 </body>
-<script type="text/javascript" src="http://static.jiaju.com/jiaju/com/ad/js/cmslead.js"></script>
-<script src="http://adm.leju.sina.com.cn/get_ad_list/PG_5B740601B672C0?callback=ads.processReqChange"></script>
-
-<script>
-
-    $(function () {
-        var resetFocusSize = function () {
-            var width = $(window).width();
-            $(".focal,.focal ul li,.focal ul li a,.focal img").css({
-                width: width,
-                height: width * 688 / 1920
-            });
-        }
-
-        var changeFn = function () {
-            var index = $("#focal01 li[class=focal_active]").index();
-            var text = $("#focal01 ul>li").eq(index).find("img").attr("alt");
-            $("#intro").text(text)
-        }
-
-        resetFocusSize();
-        // setInterval(resetFocusSize, 10)
-        changeFn();
-        dj.get("ui.focusimg", ["ui.gun"], function () {
-            jQuery("#focal01 .scroll-wrap-inner>ul").focusimg({
-                item: "li",
-                index: 0,
-                auto: true,
-                interval: 5000,
-                vertical: false,
-                circle: true,
-                prev: "#focal01 .focal-btn-lt",
-                next: "#focal01 .focal-btn-rt",
-                smallimg: $("#focal01 ol li"),
-                smallevent: "mouseover",
-                smallSelectedClass: "focal_active",
-                onFocusimgChanged: changeFn,
-            });
-        });
-
-        function sayHello() {
-            console.log('rqerqwerqwerqerqwerqe')
-        }
-        $(window).resize(function () {
-            resetFocusSize();
-        })
-    })
-    $(function () {
-        // 图片懒加载
-        (function lazyload() {
-            var ImgList = $('img');
-            ImgList.each(function (index, item) {
-                var dataSrc = $(this).attr('src')
-                $(this).attr({ 'data-src': dataSrc }).removeAttr('src').attr('src', 'http://src.leju.com/imp/imp/deal/03/93/5/051d77fcc8cf466e760f4c60_p24_mk24.png');
-            })
-            $(window).scroll(lazyload);
-            function lazyload() {
-                var wtop = $(window).scrollTop();
-                var wheight = $(window).height();
-                ImgList.each(function (index, item) {
-                    var imgTop = ImgList.eq(0).offset().top;
-                    if (imgTop - wtop < wheight) {
-                        var src = ImgList.eq(0).attr('data-src');
-                        ImgList.eq(0).attr('src', src)
-                        ImgList.splice(0, 1);
-                    }
-                })
-            }
-            lazyload();
-        })();
-    });
-
-</script>
 
 </html>

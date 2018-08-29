@@ -1,61 +1,86 @@
-<!-- 焦点图 -->
-<div class="left-box">
-    <div class="focal" id="focal01">
-        <div class="focal-con">
-            <div class="scroll-wrap-inner">
-                <ul>
-                    <li>
-                        <div id="b03"></div>
-                        <a href="http://jiaju.sina.com.cn/news/s/20180816/6435928037728256238.shtml" target="_blank">
-                            <img src="http://src.leju.com/imp/imp/deal/e8/6f/b/f1b9b3ec9b847e7b287f76222f3_p24_mk24.jpg" alt="顶级battle！150城100万设计师随设计大师再绘敦煌  与美学宗师论道宝岛">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://jiaju.sina.com.cn/zt/djs1/" target="_blank">
-                            <img src="http://src.leju.com/imp/imp/deal/f6/8b/f/f9a6214e79d742419285479c08c_p24_mk24.jpg" alt="《大家说》第一期：家装未来十年靠什么C位出道？">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://jiaju.sina.com.cn/news/j/20180814/6435074336121749619.shtml" target="_blank">
-                            <img src="http://src.leju.com/imp/imp/deal/70/33/5/231aa9128b16a3e31dd4661b7c3_p24_mk24.jpg" alt="家居帮帮忙 | 屋漏偏逢连夜雨 亡羊补牢话防漏">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://jiaju.sina.com.cn/news/20180813/6434704705129349237.shtml" target="_blank">
-                            <img src="http://src.leju.com/imp/imp/deal/d6/c3/8/76b59c1a28c3244da6570f0ff32_p24_mk24.jpg" alt="改革开放40年家经济人物 | 严红：设计走向民间 开启全民定制时代">
-                        </a>
-                    </li>
+<!DOCTYPE html>
+<html lang="en">
 
-                    <li>
-                        <a href="http://jiaju.sina.com.cn/news/s/20180813/6434714185082667958.shtml">
-                            <img src="http://src.leju.com/imp/imp/deal/87/90/9/2b4b576a57acf787bc88ef768cd_p24_mk24.jpg" alt="中国设计公开课温州站 探寻瓯城设计与商业共生的未来">
-                        </a>
-                    </li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
 
-                    <li>
-                        <a href="http://jiaju.sina.cn/news/s/20180816/6435695193307284126.shtml">
-                            <img src="http://src.leju.com/imp/imp/deal/49/57/1/0ce55a4e9dde6ddd57d353ffe99_p24_mk24.jpg" alt="梦想改造家：《一个老兵的家》">
-                        </a>
-                    </li>
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+            height: 500px;
+            display: flex;
+            border: 1px dashed red;
+            justify-content: space-around;
+            flex-direction: row;
+            flex-wrap: wrap;
+            /* flex-flow: wrap row-reverse; */
+            align-items: center;
+            align-content: center;
+        }
 
-                </ul>
-            </div>
-        </div>
-        <div class="focal-intro">
-            <span></span>
-            <p id="intro"></p>
-        </div>
-        <div class="focal-btn">
-            <span class="focal-btn-lt"></span>
-            <span class="focal-btn-rt"></span>
-            <ol class="focal-tab">
-                <li class="focal_active"></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ol>
-        </div>
+        #wrap div {
+            background: orange;
+            height: 100px;
+            width: 100px;
+            text-align: center;
+            line-height: 100px;
+            border: 1px dashed darkcyan;
+            margin: 10px;
+        }
+        #wrap .three{
+            height: 100px;
+            order: -3;
+            /* flex-grow: 3; */
+            flex: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div>one</div>
+        <div>two</div>
+        <div class="three">three</div>
+        <div>four</div>
+        <div>five</div>
+        <div>six</div>
+        <div>seveen</div>
+        <div>three</div>
+        <div>four</div>
+        <div>five</div>
+        <div>six</div>
+        <div>seveen</div>
+        <div>three</div>
+        <div>four</div>
+        <div>five</div>
+        <div>six</div>
+        <div>seveen</div>
+        <div>three</div>
+        <div>four</div>
+        <div>five</div>
+        <div>six</div>
+        <div>seveen</div>
+
     </div>
-</div>
+</body>
+<script>
+    var obj = {
+        name:'jiangze',
+        age: 12,
+        gender: 'man'
+    }
+    if(obj.name) {
+        console.log(obj.name);
+        var age = obj.age + obj.hello.age;
+    }
+</script>
+
+</html>
