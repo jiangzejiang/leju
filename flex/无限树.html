@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <ul class="alltree"></ul> -->
+    <div class="alltree">
+
+    </div>
+
+</body>
+<script src="../js/jquery-3.3.1.js"></script>
+<script>
+    $(function () {
+        const tree = [
+            {
+                title: '0-0',
+                key: '0-0',
+                children: [
+                    {
+                        title: '0-0-0',
+                        key: '0-0-0',
+                        children: [
+                            {
+                                title: '0-0-0-0', key: '0-0-0-0', children: [
+                                    // { title: '0-0-0-0-1', key: '0-0-0-0-1' },
+                                    // { title: '0-0-0-0-2', key: '0-0-0-0-2' },
+                                    // { title: '0-0-0-0-3', key: '0-0-0-0-3' },
+                                ],
+                            },
+                            { title: '0-0-0-1', key: '0-0-0-1' },
+                            { title: '0-0-0-2', key: '0-0-0-2' },
+                        ],
+                    }, {
+                        title: '0-0-1',
+                        key: '0-0-1',
+                        children: [
+                            { title: '0-0-1-0', key: '0-0-1-0' },
+                            { title: '0-0-1-1', key: '0-0-1-1' },
+                            { title: '0-0-1-2', key: '0-0-1-2' },
+                        ],
+                    }, {
+                        title: '0-0-2',
+                        key: '0-0-2',
+                    }
+                ],
+            },
+            {
+                title: '0-1',
+                key: '0-1',
+                children: [
+                    { title: '0-1-0-0', key: '0-1-0-0' },
+                    { title: '0-1-0-1', key: '0-1-0-1' },
+                    { title: '0-1-0-2', key: '0-1-0-2' },
+                ],
+            }, {
+                title: '0-2',
+                key: '0-2',
+            }
+        ];
+
+        function setDom(children, parent) {
+            for (let i = 0; i < children.length; i++) {
+                let ul = $('<ul></ul>');
+                let li = $('<li></li>');
+                let p = $('<p></p>').html(children[i].title);
+                ul.append(li.append(p));               
+                parent.append(ul);
+                let childrens = children[i].children;
+                if (childrens) {
+                    setDom(childrens, li);
+                }
+            }
+        }
+        setDom(tree, $('.alltree'));
+    })
+
+
+/*
+    $(function () {
+        console.log('ready');
+        var tree = {
+            id: '1',
+            children: [
+                {
+                    id: '1-1',
+                    children: [
+                        {
+                            id: '1-1-1',
+                            children: []
+                        },
+                        {
+                            id: '1-1-2',
+                            children: []
+                        },
+                    ]
+                },
+                {
+                    id: '1-2',
+                    children: [
+                        {
+                            id: '1-2-1',
+                            children: [
+                                {
+                                    id: '1-2-1-1',
+                                    children: []
+                                },
+                                {
+                                    id: '1-2-1-2',
+                                    children: []
+                                },
+                            ]
+                        },
+                        {
+                            id: '1-2-2',
+                            children: [
+                                {
+                                    id: '1-2-2-1',
+                                    children: []
+                                },
+                                {
+                                    id: '1-2-2-2',
+                                    children: []
+                                },
+                            ]
+                        },
+                    ]
+                },
+                {
+                    id: '1-3',
+                    children: [
+                        {
+                            id: '1-3-1',
+                            children: []
+                        },
+                    ]
+                },
+                {
+                    id: '1-4',
+                    children: []
+                },
+            ]
+        };
+        var allLi = $('<div></div>').addClass('alltree');
+        let all = allLi.append($('<p></p>').html(tree.id));
+        $("body").append(all);
+        var children = tree.children;
+
+        function setDom(children, parent) {
+            if (children.length > 0) {
+                for (let i = 0; i < children.length; i++) {
+                    var ul = $('<ul></ul>');
+                    var li = $('<li></li>');
+                    var id = children[i].id;
+                    li.append($('<p></p>').html(id)).addClass(i);
+                    ul.append(li);
+                    parent.append(ul);
+                    setDom(children[i].children, li)
+                }
+            }
+        }
+        setDom(children, allLi);
+    })
+    */
+</script>
+
+<!-- <script>
+    $(function () {
+        /**
+ * 树状的算法
+ * @params list     代转化数组
+ * @params parentId 起始节点
+ */
+        var tree = [
+            {
+                "id": 1,
+                "name": "超级管理",
+                "parent_id": 0,
+                "children": [
+                    {
+                        "id": 2,
+                        "name": "用户管理",
+                        "parent_id": 1,
+                        "children": [
+                            {
+                                "id": 5,
+                                "name": "操作用户",
+                                "parent_id": 2,
+                                "children": [
+                                    {
+                                        "id": 7,
+                                        "name": "用户新增",
+                                        "parent_id": 5,
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 8,
+                                        "name": "用户删除",
+                                        "parent_id": 5,
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 9,
+                                        "name": "用户修改",
+                                        "parent_id": 5,
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 6,
+                                "name": "查看用户",
+                                "parent_id": 2,
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "部门管理",
+                        "parent_id": 1,
+                        "children": [
+                            {
+                                "id": 10,
+                                "name": "操控部门",
+                                "parent_id": 3,
+                                "children": [
+                                    {
+                                        "id": 12,
+                                        "name": "部门新增",
+                                        "parent_id": 10,
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 13,
+                                        "name": "部门删除",
+                                        "parent_id": 10,
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 14,
+                                        "name": "部门修改",
+                                        "parent_id": 10,
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 11,
+                                "name": "查看部门",
+                                "parent_id": 3,
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "name": "日志管理",
+                        "parent_id": 1,
+                        "children": [
+                            {
+                                "id": 15,
+                                "name": "日志查看",
+                                "parent_id": 4,
+                                "children": []
+                            },
+                            {
+                                "id": 16,
+                                "name": "日志导出",
+                                "parent_id": 4,
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+        function getTrees(list, parentId) {
+            let items = {};
+            // 获取每个节点的直属子节点，*记住是直属，不是所有子节点
+            for (let i = 0; i < list.length; i++) {
+                let key = list[i].parent_id;
+                if (items[key]) {
+                    items[key].push(list[i]);
+                } else {
+                    items[key] = [];
+                    items[key].push(list[i]);
+                }
+            }
+            return formatTree(items, parentId);
+        }
+
+        /**
+         * 利用递归格式化每个节点
+         */
+        function formatTree(items, parentId) {
+            let result = [];
+            if (!items[parentId]) {
+                return result;
+            }
+            for (let t of items[parentId]) {
+                t.children = formatTree(items, t.id)
+                result.push(t);
+            }
+            return result;
+        }
+        var mytree = getTrees(tree)
+        console.log(mytree);
+    })
+</script> -->
+<!--  -->
+
+</html>

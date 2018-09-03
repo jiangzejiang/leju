@@ -9,183 +9,212 @@
     <script src="http://static.jiaju.com/jiaju/com/js/dojquery-s-min.js" charset="UTF-8"></script>
     <link rel="stylesheet" href="./index.css">
     
+    <style>
+        #my_live{
+            width: 1200px;
+            overflow: auto;
+            position: relative;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="my_live">
+        <div class="all_swiper_microlite_live">
+            <!-- 第一个 -->
+           <div class="focal" id="swiper_microlite_live1">
+               <div class="focal-con">
+                   <div class="scroll-wrap-inner">
+                       <ul>
+                           <li>
+                               <a href="">
+                                   <img src="https://src.leju.com/imp/imp/deal/10/3a/f/a3e8c8a416025cc2624cdce9475_p24_mk24_sX0.jpg" alt="">
+                               </a>
+                               <a href="" class="live-ziti">
+                                   <p>
+                                       <span>成都地铁</span>
+                                       <span>地下空间也能采光满满</span>
+                                   </p>
+                               </a>
+                               <div class="textDiv"></div>
+                           </li>
+                           <li>
+                               <a href="">
+                                   <img src="https://src.leju.com/imp/imp/deal/ee/75/4/97257bf5cc99bf76f269f75fa72_p24_mk24_sX0.jpg" alt="">
+                               </a>
+                               <a href="" class="live-ziti">
+                                   <p>
+                                       <span>新中式</span>
+                                       <span>温润如玉 是君子也</span>
+                                   </p>
+                               </a>
+                               <div class="textDiv"></div>
+                           </li>
+                           <li>
+                               <a href="">
+                                   <img src="https://src.leju.com/imp/imp/deal/94/c9/e/c092dc27131f433eecbe00fe2f0_p24_mk24_sX0.jpg" alt="">
+                               </a>
+                               <a href="" class="live-ziti">
+                                   <p>
+                                       <span>通体微晶石</span>
+                                       <span>不仅仅是建材</span>
+                                   </p>
+                               </a>
+                               <div class="textDiv"></div>
+                           </li>
+                       </ul>
    
-    <div class="all_swiper_microlite_live">
-         <!-- 第一个 -->
-        <div class="focal" id="swiper_microlite_live1">
-            <div class="focal-con">
-                <div class="scroll-wrap-inner">
-                    <ul>
-                        <li>
-                            <a href="">
-                                <img src="https://src.leju.com/imp/imp/deal/10/3a/f/a3e8c8a416025cc2624cdce9475_p24_mk24_sX0.jpg" alt="">
-                            </a>
-                            <a href="" class="live-ziti">
-                                <p>
-                                    <span>成都地铁</span>
-                                    <span>地下空间也能采光满满</span>
-                                </p>
-                            </a>
-                            <div class="textDiv"></div>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img src="https://src.leju.com/imp/imp/deal/ee/75/4/97257bf5cc99bf76f269f75fa72_p24_mk24_sX0.jpg" alt="">
-                            </a>
-                            <a href="" class="live-ziti">
-                                <p>
-                                    <span>新中式</span>
-                                    <span>温润如玉 是君子也</span>
-                                </p>
-                            </a>
-                            <div class="textDiv"></div>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img src="https://src.leju.com/imp/imp/deal/94/c9/e/c092dc27131f433eecbe00fe2f0_p24_mk24_sX0.jpg" alt="">
-                            </a>
-                            <a href="" class="live-ziti">
-                                <p>
-                                    <span>通体微晶石</span>
-                                    <span>不仅仅是建材</span>
-                                </p>
-                            </a>
-                            <div class="textDiv"></div>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-            <!-- <p id="intro"></p> -->
-            <div class="focal-btn">
-                <span class="focal-btn-lt">
-                    <</span>
-                        <span class="focal-btn-rt">></span>
-                        <ol class="focal-tab">
-                            <li class="focal_active"></li>
-                            <li></li>
-                            <li></li>
-                        </ol>
-            </div>
-        </div>
-        <!-- 第二个 -->
-        <div class="focal none" id="swiper_microlite_live2">
-            <div class="focal-con">
-                <div class="scroll-wrap-inner">
-                    <ul>
-                        <li>
-                            <a href="">
-                                <img src="https://src.leju.com/imp/imp/deal/10/3a/f/a3e8c8a416025cc2624cdce9475_p24_mk24_sX0.jpg" alt="">
-                            </a>
-                            <a href="" class="live-ziti">
-                                <p>
-                                    <span>成都地铁</span>
-                                    <span>地下空间也能采光满满</span>
-                                </p>
-                            </a>
-                            <div class="textDiv"></div>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img src="https://src.leju.com/imp/imp/deal/ee/75/4/97257bf5cc99bf76f269f75fa72_p24_mk24_sX0.jpg" alt="">
-                            </a>
-                            <a href="" class="live-ziti">
-                                <p>
-                                    <span>新中式</span>
-                                    <span>温润如玉 是君子也</span>
-                                </p>
-                            </a>
-                            <div class="textDiv"></div>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img src="https://src.leju.com/imp/imp/deal/94/c9/e/c092dc27131f433eecbe00fe2f0_p24_mk24_sX0.jpg" alt="">
-                            </a>
-                            <a href="" class="live-ziti">
-                                <p>
-                                    <span>通体微晶石</span>
-                                    <span>不仅仅是建材</span>
-                                </p>
-                            </a>
-                            <div class="textDiv"></div>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-            <!-- <p id="intro"></p> -->
-            <div class="focal-btn">
-                <span class="focal-btn-lt">
-                    <</span>
-                        <span class="focal-btn-rt">></span>
-                        <ol class="focal-tab">
-                            <li class="focal_active"></li>
-                            <li></li>
-                            <li></li>
-                        </ol>
-            </div>
-        </div>
-        <!-- 第三个 -->
-        <div class="focal none" id="swiper_microlite_live3">
-            <div class="focal-con">
-                <div class="scroll-wrap-inner">
-                    <ul>
-                        <li>
-                            <a href="">
-                                <img src="https://src.leju.com/imp/imp/deal/10/3a/f/a3e8c8a416025cc2624cdce9475_p24_mk24_sX0.jpg" alt="">
-                            </a>
-                            <a href="" class="live-ziti">
-                                <p>
-                                    <span>成都地铁</span>
-                                    <span>地下空间也能采光满满</span>
-                                </p>
-                            </a>
-                            <div class="textDiv"></div>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img src="https://src.leju.com/imp/imp/deal/ee/75/4/97257bf5cc99bf76f269f75fa72_p24_mk24_sX0.jpg" alt="">
-                            </a>
-                            <a href="" class="live-ziti">
-                                <p>
-                                    <span>新中式</span>
-                                    <span>温润如玉 是君子也</span>
-                                </p>
-                            </a>
-                            <div class="textDiv"></div>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img src="https://src.leju.com/imp/imp/deal/94/c9/e/c092dc27131f433eecbe00fe2f0_p24_mk24_sX0.jpg" alt="">
-                            </a>
-                            <a href="" class="live-ziti">
-                                <p>
-                                    <span>通体微晶石</span>
-                                    <span>不仅仅是建材</span>
-                                </p>
-                            </a>
-                            <div class="textDiv"></div>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-            <!-- <p id="intro"></p> -->
-            <div class="focal-btn">
-                <span class="focal-btn-lt">
-                    <</span>
-                        <span class="focal-btn-rt">></span>
-                        <ol class="focal-tab">
-                            <li class="focal_active"></li>
-                            <li></li>
-                            <li></li>
-                        </ol>
-            </div>
-        </div>
+                   </div>
+               </div>
+               <!-- <p id="intro"></p> -->
+               <div class="focal-btn">
+                   <span class="focal-btn-lt">
+                       <</span>
+                           <span class="focal-btn-rt">></span>
+                           <ol class="focal-tab">
+                               <li class="focal_active"></li>
+                               <li></li>
+                               <li></li>
+                           </ol>
+               </div>
+           </div>
+           <!-- 第二个 -->
+           <div class="focal none" id="swiper_microlite_live2">
+               <div class="focal-con">
+                   <div class="scroll-wrap-inner">
+                       <ul>
+                           <li>
+                               <a href="">
+                                   <img src="http://src.leju.com/imp/imp/deal/52/ff/f/3eb7c6ef93ec0c208d1129e946c_p24_mk24.jpg" alt="">
+                               </a>
+                               <a href="" class="live-ziti">
+                                   <p>
+                                       <span>这是第二个分类</span>
+                                       <span>下的第一个焦点图</span>
+                                   </p>
+                               </a>
+                               <div class="textDiv"></div>
+                           </li>
+                           <li>
+                               <a href="">
+                                   <img src="http://src.leju.com/imp/imp/deal/9f/68/3/c2c55ee5388ff2a93e28e1cb8b9_p24_mk24.jpg" alt="">
+                               </a>
+                               <a href="" class="live-ziti">
+                                   <p>
+                                        <span>这是第二个分类</span>
+                                        <span>下的第二个焦点图</span>
+                                   </p>
+                               </a>
+                               <div class="textDiv"></div>
+                           </li>
+                           <li>
+                               <a href="">
+                                   <img src="http://src.leju.com/imp/imp/deal/9b/0d/1/abea6872f989032fadb6ee03129_p24_mk24.jpg" alt="">
+                               </a>
+                               <a href="" class="live-ziti">
+                                   <p>
+                                       <span>家居营销</span>
+                                       <span>还能这样玩？</span>
+                                   </p>
+                               </a>
+                               <div class="textDiv"></div>
+                           </li>
+                       </ul>
+   
+                   </div>
+               </div>
+               <!-- <p id="intro"></p> -->
+               <div class="focal-btn">
+                   <span class="focal-btn-lt">
+                       <</span>
+                           <span class="focal-btn-rt">></span>
+                           <ol class="focal-tab">
+                               <li class="focal_active"></li>
+                               <li></li>
+                               <li></li>
+                           </ol>
+               </div>
+           </div>
+           <!-- 第三个 -->
+           <div class="focal none" id="swiper_microlite_live3">
+               <div class="focal-con">
+                   <div class="scroll-wrap-inner">
+                       <ul>
+                           <li>
+                               <a href="">
+                                   <img src="http://src.leju.com/imp/imp/deal/52/ff/f/3eb7c6ef93ec0c208d1129e946c_p24_mk24.jpg" alt="">
+                               </a>
+                               <a href="" class="live-ziti">
+                                   <p>
+                                        <span>这是第三个个分类</span>
+                                        <span>下的第一个焦点图</span>
+                                   </p>
+                               </a>
+                               <div class="textDiv"></div>
+                           </li>
+                           <li>
+                               <a href="">
+                                   <img src="http://src.leju.com/imp/imp/deal/06/d5/3/663917887f1daf6913bbc1da57b_p24_mk24.jpg" alt="">
+                               </a>
+                               <a href="" class="live-ziti">
+                                   <p>
+                                       <span>来自星星的孩子</span>
+                                       <span>第二个焦点图</span>
+                                   </p>
+                               </a>
+                               <div class="textDiv"></div>
+                           </li>
+                           <li>
+                               <a href="">
+                                   <img src="http://src.leju.com/imp/imp/deal/6f/5f/3/e29ea5ab935071ec1452d4b9e5e_p24_mk24.jpg" alt="">
+                               </a>
+                               <a href="" class="live-ziti">
+                                   <p>
+                                       <span>租房甲醛</span>
+                                       <span>第三个焦点图</span>
+                                   </p>
+                               </a>
+                               <div class="textDiv"></div>
+                           </li>
+                       </ul>
+   
+                   </div>
+               </div>
+               <!-- <p id="intro"></p> -->
+               <div class="focal-btn">
+                   <span class="focal-btn-lt">
+                       <</span>
+                           <span class="focal-btn-rt">></span>
+                           <ol class="focal-tab">
+                               <li class="focal_active"></li>
+                               <li></li>
+                               <li></li>
+                           </ol>
+               </div>
+           </div>
+       </div>
+       <div class="live_thumbnail">
+        <ul>
+            <li class="active_li">
+                <img src="https://src.leju.com/imp/imp/deal/32/97/9/2fce41c626bf307f9f560fe1791_p24_mk24_sX0.jpg" alt="">
+                <div class="sanjiao"></div>
+                <p>市政工程</p>
+            </li>
+            <li>
+                <img src="https://src.leju.com/imp/imp/deal/c0/fd/c/b8c246e8e966403da399f92f7e0_p24_mk24_sX0.jpg" alt="">
+                <p>家庭应用</p>
+                <div class="sanjiao"></div>
+    
+            </li>
+            <li>
+                <img src="https://src.leju.com/imp/imp/deal/8d/55/d/3657325d0289445c66e597d5bbf_p24_mk24_sX0.jpg" alt="">
+                <p>微晶艺术</p>
+                <div class="sanjiao"></div>
+            </li>
+        </ul>
     </div>
+    </div>
+  
 
 </body>
 
@@ -241,4 +270,15 @@
 
         });
     });
+
+    var li = $('.live_thumbnail>ul>li');
+    var bannerLi = $('#swiper-container-banner>ul>li');
+    li.click(function () {
+        li.removeClass('active_li');
+        $(this).addClass('active_li');
+        var index = $(this).index();
+        var swiper = $('.all_swiper_microlite_live .focal');
+        swiper.removeClass('block').addClass('none');
+        swiper.eq(index).removeClass('none').addClass('block')
+    })
 </script>

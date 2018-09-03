@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.3.1.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            height: 40px;
+            width: 40px;
+            background: lightblue;
+            margin-top: 30px;
+        }
+
+        .newClass {
+            height: 100px;
+            width: 100px;
+            background: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hello world"></div>
+    <div class="hello newClass"></div>
+    <div class="hello world"></div>
+
+</body>
+<!-- <script>
+    console.log(Array.prototype)
+    console.log(String.prototype)
+    console.log(Number.prototype);
+
+    $.extend({
+        'hello': function (arr) {
+            console.log(arr.sort())
+            arr.forEach(element => {
+                console.log(element)
+            });
+            return arr;
+            
+        }
+    })
+    var helloguohou = $.hello(['3', '2', '3']);
+    console.log(helloguohou);
+
+
+    $.fn.extend({
+        "addNewClass": function(newClass) {
+            console.log(this);
+            $(this).each(function(index, item) {
+                console.log(this);
+                var isExit = false;
+                item.classList.forEach(function(classItem, index) {
+                    if (classItem == newClass) {
+                        isExit = true
+                    }
+                })
+                if(!isExit) {
+                    item.className = item.className + ' ' + newClass;
+                }
+            })
+        }
+    })
+    $('.hello').addNewClass('newClass');
+
+    Array.prototype.getArrayString = function() {
+        return JSON.stringify(this)
+    }
+
+    var arr = ['1', 2, 4, 5, '3']
+    var newArr = arr.getArrayString();
+    console.log(newArr)
+    console.log(Array.prototype.getArrayString);
+</script> -->
+
+<script>
+    // var pattern1 = /[at]/g
+
+    // var pattern2 = /[bc]at/i
+
+    // var pattern3 = /.at/gi
+
+    // var pattern4 = new RegExp('[bc]at', 'i')
+    // var a = pattern4.test('fasdfadfacat')
+    // console.log(a)
+
+
+    // var re = null,
+    //     i;
+
+    // for (i = 0; i < 10; i++) {
+    //     re = /cat/g;
+    //     const test1 = re.test("catastrophe")
+    //     console.log(test1)
+    //     const test = re.test("catastrophe");
+    //     console.log(test)
+    // }
+
+
+
+    // const myData = function nihao() {
+    // };
+    // myData = function nibuhao() { };
+    // console.log(myData)
+</script>
+
+<script>
+    // var obj = {
+    //     name: '蒋怀祯',
+    //     age: 13,
+    //     getName: function() {
+    //         console.log(this.name)
+    //     }
+    // }
+    // function set(args) {
+    //     // console.log(this);
+    //     // this.name = args;
+    //     console.log(this)
+    //     console.log(args)
+    //     this.getName()
+    // }
+    // function getName() {
+    //     console.log('这是window下的getName')
+    // }
+    // var name = 'jiangze'
+    // // set.call(this, name);
+    // set.apply(obj, [name, 12])
+    // // set(name)
+
+    // 
+    function add(a, b) {
+        console.log(this)
+        return a + b;
+    }
+    function sub(a, b) {
+        console.log(this)
+        return a - b;
+    }
+    var a1 = add.apply(sub, [4, 2]);　　//sub调用add的方法
+    var a2 = sub.apply(add, [4, 2]);
+    console.log(a1);  //6     
+    console.log(a2);  //2
+
+    /*call的用法*/
+    var a1 = add.call(sub, 4, 2);
+    console.log(a1);  //6     
+
+
+
+    var x = 0;
+    for (var x = 0; x < 10; x++) {
+        ;//Do Nothing
+    }
+    console.log(x);
+</script>
+
+</html>

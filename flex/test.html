@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .ads,
+        .newads {
+            display: flex;
+
+            width: 1200px;
+            height: 91px;
+            margin: 0 auto
+        }
+
+        .ads div,
+        .newads div {
+            height: 91px;
+            width: 100px;
+        }
+
+        .hover {
+            width: 1200px;
+            height: 100px;
+            background: lavenderblush;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .hover span,
+        .hover em {
+            display: inline-block;
+            width: 110px;
+            height: 10px;
+            /* background: lavender; */
+        }
+
+        .hover span {
+            position: relative;
+            background: url("http://src.leju.com/imp/imp/deal/0a/8a/1/e53b5db76649392e19bbbada532_p24_mk24.png") 0 -10px repeat-x;
+        }
+
+        .hover em {
+            position: absolute;
+            width: 0;
+            top: 0;
+            left: 0;
+            background: url("http://src.leju.com/imp/imp/deal/0a/8a/1/e53b5db76649392e19bbbada532_p24_mk24.png") 0 0 repeat-x;
+        }
+
+        .hover p {
+            display: inline-block;
+        }
+    </style>
+    <script src="../js/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+    <img src="http://src.leju.com/imp/imp/deal/0a/8a/1/e53b5db76649392e19bbbada532_p24_mk24.png" alt="">
+    <!-- <img src="http://src.leju.com/imp/imp/deal/67/58/e/cf18d1d9dcf95a155fd43df9521_p24_mk24.png" alt="">
+    <img src="http://src.leju.com/imp/imp/deal/cb/28/b/1b34516507b277f229f73079636_p24_mk24.png" alt=""> -->
+    <div>
+        <form action="https://www.jiaju4324132.com" method="get">
+            <input class="nameInput" type="text" placeholder="请输入密码">
+            <button type="submit">提交</button>
+        </form>
+        <div class="myClick">
+            <button>点击这个获取焦点</button>
+            <button>点击这个触发提交</button>
+        </div>
+    </div>
+    http://media.src.leju.com/imp/imp/deal/11/a0/8/21a5c802e84fc9d95cb7cb56d09_p24_mk24.mp4
+
+    <div class="ads">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="newads">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="hover">
+        <p>
+            <span>
+                <em></em>
+            </span>
+        </p>
+
+    </div>
+
+    <script src="./setBackground.js"></script>
+    <script>
+        $(function () {
+            var buttton = $('.myClick button');
+            buttton.eq(0).click(function () {
+                $('input').eq(0).focus()
+            })
+            buttton.eq(1).click(function () {
+                $('form button').click()
+            })
+            $('form').submit(function(event) {
+                console.log(event);
+                var formData = $('form').eq(0).serialize();
+                console.log(formData)
+                event.preventDefault()
+            })
+            
+
+
+
+
+
+
+
+
+
+
+            var bg_hui = 'http://src.leju.com/imp/imp/deal/67/58/e/cf18d1d9dcf95a155fd43df9521_p24_mk24.png',
+                bg_hover = 'http://src.leju.com/imp/imp/deal/cb/28/b/1b34516507b277f229f73079636_p24_mk24.png';
+            $('.ads div').setBg(100, bg_hui, bg_hover);
+            $('.newads div').setBg(100, bg_hover);
+        })
+    </script>
+</body>
+<script>
+    $(function () {
+        console.log('fadfad');
+
+        var index = 0;
+        // $('p').mousemove(function (event) {
+        //     console.log(event.offsetX);
+        //     var index = Math.ceil(event.offsetX / 11);
+        //     console.log(index);
+        //     $('em').css('width', index * 11);
+        // })
+        // $('p').mouseout(setWidth);        
+        // function setWidth() {
+        //     $('em').css('width', index * 11);
+        // }
+        $('p').click(function (event) {
+            console.log(event.offsetX);
+            index = Math.ceil(event.offsetX / 11);
+            console.log(index);
+            $('em').css('width', index * 11);
+            $('p').off('mouseout');
+        })
+    })
+</script>
+
+</html>

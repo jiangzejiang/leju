@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./index.css"> -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #focal01.focal {
+            position: relative;
+            overflow: hidden;
+        }
+
+        #focal01 .scroll-wrap-inner ul {
+            width: 100%;
+            position: absolute;
+        }
+
+        #focal01 .scroll-wrap-inner ul li {
+            float: left;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        #focal01 .scroll-wrap-inner li a,
+        #focal01 .scroll-wrap-inner li a img {
+            display: block;
+        }
+
+        #focal01 .focal-btn span {
+            height: 60px;
+            width: 60px;
+            position: absolute;
+            top: 45%;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-size: 45px;
+            text-align: center;
+            line-height: 60px;
+            cursor: pointer;
+        }
+
+        #focal01 .focal-btn .focal-btn-lt {
+            left: 18%;
+        }
+
+        #focal01 .focal-btn .focal-btn-rt {
+            right: 18%;
+        }
+
+        #focal01 .focal-btn .focal-tab {
+            position: absolute;
+            bottom: 24px;
+            right: 12px;
+        }
+
+        #focal01 .focal-tab li {
+            float: left;
+            height: 8px;
+            width: 8px;
+            line-height: 0;
+            list-style-type: none;
+            font-size: 0;
+            background: #bababd;
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        #focal01 .focal-tab li.focal_active {
+            border: 2px solid #fff;
+            vertical-align: top;
+            margin-top: -2px;
+        }
+
+
+        #focal01 #intro {
+            position: absolute;
+            left: 0;
+            bottom: 68px;
+            width: 100%;
+            font-size: 36px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .scroll-wrap-inner {
+            overflow: auto;
+
+        }
+
+        /* body {
+            height: 20000px;
+        } */
+
+        .flytip {
+            border: 2px solid #CDCD00;
+            background: #FF6347;
+            padding: 10px;
+            color: #fff;
+            position: absolute;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<!-- <script src="./dojquery-s-min.js"></script> -->
+<script src="http://static.jiaju.com/jiaju/com/js/dojquery-s-min.js" charset="UTF-8"></script>
+<script src=""></script>
+
+<body>
+    <div class="focal" id="focal01">
+        <div class="focal-con">
+            <div class="scroll-wrap-inner">
+                <ul>
+                    <li>
+                        <a href="javascript:;" target="_blank">
+                            <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石一">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" target="_blank">
+                            <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石二">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" target="_blank">
+                            <img src="http://src.leju.com/imp/imp/deal/6d/eb/2/1fede3540c34e32a836f21c7348_p24_mk24.png" alt="通体微晶石三">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p id="intro"></p>
+        <div class="focal-btn">
+            <span class="focal-btn-lt">
+                <</span>
+                    <span class="focal-btn-rt">></span>
+                    <ol class="focal-tab">
+                        <li class="focal_active"></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+        </div>
+    </div>
+
+    <button id="b1">test1</button>
+    <button id="b2">test2</button>
+    <button id="b3">test3</button>
+    <button id="b4">test4</button>
+    <button id="b5">test5</button>
+    <div id="floatDiv" style="width: 20%; height:100px; background: white; ">pos : {bottom:0,right:0}</div>
+
+</body>
+
+
+<script type="text/javascript" src="http://static.jiaju.com/jiaju/com/ad/js/cmslead.js"></script>
+<script src="http://adm.leju.sina.com.cn/get_ad_list/PG_5B740601B672C0?callback=ads.processReqChange"></script>
+
+
+<script>
+    $(function () {
+        $.get("ui.fixed", function () {
+            $("#floatDiv").fixed({
+                pos: { bottom: 0, right: 0 }
+            });
+        });
+    })
+</script>
+
+<script>
+    /*
+ * flytip.js     
+ *  
+ * @author suoyong<suoyong@leju.sina.com.cn>
+ * @version    $Id: main.js 280534 2011-12-31 08:45:48Z tangyi $
+ */
+    /*
+        (function ($) {
+            $.statics = $.statics || {
+                version: '1.0'
+            };
+            $.statics.flytip = {
+                blocktype: 1, //消息阻塞时，0为同框模式 1为多框模式
+                blockmargin: 20,//消息阻塞模式为1时，距离上一条阻塞消息的距离
+                start: ["50%", "90%"], //提示框起始position[left,top]
+                end: ["50%", "50%"], //提示框结束position[left,top]
+                startopacity: 0,//初始透明度
+                endopacity: 1,//结束透明度
+                feet: null, //移动距离，如设置，end失效
+                direction: "top", //移动方向，如设置，end失效
+                speed: 1500, //移动动画时间
+                stay: 2000, //结尾停留时间
+                fadespeed: 500,//消失动画时间
+                style: "flytip" //框体样式
+            };
+            var doc = $(document),
+                flytipstatus = 0,
+                tipPas = null,
+                tipRecorder = null;
+            var flytip = function (info, options, fn) {
+                if (options) {
+                    if ($.isFunction(options)) {
+                        fn = options;
+                        options = $.extend({}, $.statics.flytip);
+                    } else {
+                        options = $.extend({}, $.statics.flytip, options);
+                    }
+                } else {
+                    options = $.extend({}, $.statics.flytip);
+                }
+    
+                var tipbox;
+                if (options.blocktype == 0) {
+                    if (window.flytips) {
+                        tipbox = window.flytips;
+                    } else {
+                        tipbox = window.flytips = $("<div/>").addClass(options.style).css("position", "absolute").appendTo($("body"));
+                    }
+                } else if (options.blocktype == 1) {
+                    tipbox = window.flytips = $("<div/>").addClass(options.style).css("position", "absolute").appendTo($("body"));
+                }
+    
+                function tipReset() {
+                    tipbox.html(info).css({
+                        "margin-left": (0 - tipbox.outerWidth()) / 2 + "px",
+                        "margin-top": (0 - tipbox.outerHeight()) / 2 + "px",
+                        "opacity": options.startopacity,
+                        "left": options.start[0],
+                        "top": options.start[1]
+                    });
+                    return this;
+                }
+                function tipShow() {
+                    var data = {};
+                    if (options.feet) {
+                        var block = 0;
+                        if (options.direction == "top") {
+                            data.marginTop = "-=" + (options.feet - block) + "px";
+                        } else if (options.direction == "bottom") {
+                            data.marginTop = "+=" + (options.feet - block) + "px";
+                        } else if (options.direction == "left") {
+                            data.marginLeft = "-=" + (options.feet - block) + "px";
+                        } else if (options.direction == "right") {
+                            data.marginLeft = "+=" + (options.feet - block) + "px";
+                        } else {
+                            return false;
+                        }
+                    } else {
+                        data.top = options.end[1];
+                        data.left = options.end[0];
+                    }
+    
+                    data.opacity = options.endopacity;
+                    flytipstatus = 1; // moving
+                    tipbox.animate(data, options.speed, "swing", function () {
+                        tipPause();
+                    });
+                }
+                function tipPause() {
+                    flytipstatus = 2; // move end pause
+                    tipPas = setTimeout(function () {
+                        tipHide();
+                    }, options.stay);
+                }
+                function pauseTipPause() {
+                    clearTimeout(tipPas);
+                }
+                function tipHide() {
+                    flytipstatus = 3; //fade ing
+                    tipbox.animate({ opacity: 0 }, options.fadespeed, function () {
+                        flytipstatus = 0; //over
+                    });
+                }
+                function showinfo() {
+                    if (options.blocktype == 0) {
+                        if (flytipstatus == 0) {
+                            tipReset();
+                            tipShow();
+                        } else if (flytipstatus == 1) {
+                            pauseTipPause();
+                            tipbox.append("<br />" + info);
+                        } else if (flytipstatus == 2) {
+                            pauseTipPause();
+                            $("<p/>").html(info).hide().appendTo(tipbox).show("normal", function () {
+                                tipPause();
+                            });
+                        } else if (flytipstatus == 3) {
+                            tipbox.stop(true).html(info).animate({
+                                opacity: 1
+                            }, 300, "swing", function () {
+                                tipPause();
+                            })
+                        }
+                    } else {
+                        tipReset();
+                        tipShow();
+                    }
+    
+                }
+                showinfo();
+            };
+    
+            $.extend({
+                flytip: flytip
+            });
+        })(jQuery);
+    */
+
+
+    $(document).ready(function () {
+        $("#b1").click(function () {
+            $.flytip("测测试阿的发送到发");
+        });
+        $("#b2").click(function () {
+            $.flytip("测测123123到发", {
+                start: ["50%", "20%"],
+                feet: 400,
+                direction: "bottom"
+            });
+        });
+        $("#b3").click(function () {
+            $.flytip("adfasdfasdf", {
+                start: ["20%", "20%"],
+                feet: 400,
+                direction: "right"
+            });
+        });
+        $("#b4").click(function () {
+            $.flytip("adfasdfasdf", {
+                start: ["80%", "20%"],
+                feet: 400,
+                direction: "left"
+            });
+        });
+        $("#b5").click(function () {
+            $.flytip("adfasdfasdf", {
+                start: ["80%", "20%"],
+                end: ["30%", "60%"]
+            });
+        });
+    });
+
+
+    $(function () {
+        var resetFocusSize = function () {
+            var width = $(window).width();
+            $(".focal,.focal ul li,.focal ul li a,.focal img").css({
+                width: width,
+                height: width * 688 / 1920
+            });
+        }
+
+        var changeFn = function () {
+            var index = $("#focal01 li[class=focal_active]").index();
+            var text = $("#focal01 ul>li").eq(index).find("img").attr("alt");
+            $("#intro").text(text)
+        }
+
+        resetFocusSize();
+        // setInterval(resetFocusSize, 10)
+        changeFn();
+        dj.get("ui.focusimg", ["ui.gun"], function () {
+            jQuery("#focal01 .scroll-wrap-inner>ul").focusimg({
+                item: "li",
+                index: 0,
+                auto: true,
+                interval: 5000,
+                vertical: false,
+                circle: true,
+                prev: "#focal01 .focal-btn-lt",
+                next: "#focal01 .focal-btn-rt",
+                smallimg: $("#focal01 ol li"),
+                smallevent: "mouseover",
+                smallSelectedClass: "focal_active",
+                onFocusimgChanged: changeFn,
+            });
+        });
+
+        function sayHello() {
+            console.log('rqerqwerqwerqerqwerqe')
+        }
+        $(window).resize(function () {
+            resetFocusSize();
+        })
+    })
+    /*
+    $(function () {
+        // 图片懒加载
+        (function lazyload() {
+            var ImgList = $('img');
+            ImgList.each(function (index, item) {
+                var dataSrc = $(this).attr('src')
+                $(this).attr({ 'data-src': dataSrc }).removeAttr('src').attr('src', 'http://src.leju.com/imp/imp/deal/03/93/5/051d77fcc8cf466e760f4c60_p24_mk24.png');
+            })
+            $(window).scroll(lazyload);
+            function lazyload() {
+                var wtop = $(window).scrollTop();
+                var wheight = $(window).height();
+                ImgList.each(function (index, item) {
+                    var imgTop = ImgList.eq(0).offset().top;
+                    if ((imgTop - wtop) < wheight) {
+                        var src = ImgList.eq(0).attr('data-src');
+                        ImgList.eq(0).attr('src', src)
+                        ImgList.splice(0, 1);
+                    }
+                })
+            }
+            lazyload();
+        })();
+    });
+*/
+</script>
+
+</html>

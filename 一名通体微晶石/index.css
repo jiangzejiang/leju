@@ -436,6 +436,7 @@ body {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    padding: 0 45px;
 }
 
 .wave_right_title a {
@@ -872,4 +873,3 @@ div#my_live {
     position: absolute;
     bottom: 0;
 }
-

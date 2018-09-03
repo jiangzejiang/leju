@@ -72,25 +72,25 @@ $(function () {
     })
     // 拼接DOM文档
     function doFunction(option) {
-        var a = 'bbuyuycccc';
-        var b = 'bcc';
-        console.log(a[0]);
-        console.log(b[0])
-        if(a > b) {
-            console.log('这是a>b')
-        }else {
-            console.log('这是a<b')
-        }
-        if(a[0] > b[0]) {
-            console.log('a > b')
-        }else if(a[0] == b[0]) {
-            console.log('a = b')
-        }
-        else {
-            console.log('a < b')
-        }
+        // var a = 'bbuyuycccc';
+        // var b = 'bcc';
+        // console.log(a[0]);
+        // console.log(b[0])
+        // if(a > b) {
+        //     console.log('这是a>b')
+        // }else {
+        //     console.log('这是a<b')
+        // }
+        // if(a[0] > b[0]) {
+        //     console.log('a > b')
+        // }else if(a[0] == b[0]) {
+        //     console.log('a = b')
+        // }
+        // else {
+        //     console.log('a < b')
+        // }
 
-        console.log(option)
+        // console.log(option)
         var notName = [];
         var countSort = true;
         var report_list = option.filter(function (item) {
@@ -135,7 +135,6 @@ $(function () {
                     return -1;
                 }
             }
-           
         })
         console.log(notName);
         console.log(report_list)
